@@ -8,8 +8,8 @@ function Index(props) {
 export default Index;
 
 export async function getStaticProps() {
-  const res = await fetchEntries("posts");
-  console.log(res);
+  const res = await fetchEntries();
+
   const posts = await res.map((p) => {
     return p.fields;
   });
