@@ -1,25 +1,31 @@
-import Link from "next/link";
 import Head from "next/head";
 import Navigation from "./navigation";
 import MobileNav from "./mobileNav";
 
-function Layout(props, { children }) {
+function Layout(props) {
 	return (
-		<main>
+		<div className="body">
 			<Head>
 				<title>{props.title || "Gundla"}</title>
 			</Head>
+
 			<Navigation />
 			<MobileNav />
-			<div>{children}</div>
+			<div>{props.children}</div>
 			<style jsx global>{`
 				* {
 					margin: 0;
 					padding: 0;
-					overflow: hidden;
+				}
+
+				.body {
+					min-height: 100vh;
+					max-width: 100vw;
+					overflow-x: hidden;
+					overflow-y: hidden;
 				}
 			`}</style>
-		</main>
+		</div>
 	);
 }
 
