@@ -1,9 +1,11 @@
 import Layout from "../../components/layout";
 
-export default function Events(props) {
+function Event(props) {
 	return (
-		<Layout>
+		<Layout title={props.name}>
 			<div></div>
 		</Layout>
 	);
 }
+
+export default Event;

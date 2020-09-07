@@ -1,9 +1,11 @@
 import Layout from "../components/layout";
 
-export default function Events() {
+function Events() {
 	return (
 		<Layout title="Events">
 			<div></div>
 		</Layout>
 	);
 }
+
+export default Events;
