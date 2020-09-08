@@ -21,8 +21,7 @@ function Layout(props) {
 				.body {
 					min-height: 100vh;
 					max-width: 100vw;
-					overflow-x: hidden;
-					overflow-y: hidden;
+					overflow: hidden;
 				}
 			`}</style>
 		</div>

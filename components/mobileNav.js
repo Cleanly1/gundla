@@ -20,7 +20,7 @@ const NavMobile = styled.nav`
 
 	.show {
 		overflow: hidden;
-		right: 0;
+		left: 0px;
 	}
 
 	@media (max-width: 600px) {
@@ -30,13 +30,13 @@ const NavMobile = styled.nav`
 
 const LinkDiv = styled.div`
 	display: none;
-	position: absolute;
+	position: fixed;
 	flex-flow: column nowrap;
 	align-items: flex-end;
 	background-color: white;
 	top: 0px;
 	padding: 10px 20px;
-	right: 100%;
+	left: 100%;
 	height: 100vh;
 	width: calc(100vw - 40px);
 	transition-duration: 1.5s;
