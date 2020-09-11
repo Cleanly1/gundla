@@ -24,6 +24,9 @@ const LogoDiv = styled.div`
 	width: 56px;
 	height: 56px;
 	margin: 24px 0 21px 0;
+	& img {
+		height: 56px;
+	}
 `;
 
 const InfoDiv = styled.div`
@@ -77,7 +80,7 @@ function Footer() {
 	return (
 		<StyledFooter>
 			<LogoDiv>
-				<img src="/logosmall-logo.png" />
+				<img src="/Logo-white.svg" />
 			</LogoDiv>
 			<InfoDiv>
 				<div>

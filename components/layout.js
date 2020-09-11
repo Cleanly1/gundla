@@ -12,7 +12,7 @@ function Layout(props) {
 
 			<Navigation />
 			<MobileNav />
-			<div>{props.children}</div>
+			<div className="content">{props.children}</div>
 			<Footer />
 			<style jsx global>{`
 				* {
@@ -24,6 +24,16 @@ function Layout(props) {
 					min-height: 100vh;
 					max-width: 100vw;
 					overflow: hidden;
+				}
+
+				.content {
+					padding-top: 13.5vh;
+				}
+
+				@media (min-width: 770px) {
+					.content {
+						padding-top: 0;
+					}
 				}
 			`}</style>
 		</div>
