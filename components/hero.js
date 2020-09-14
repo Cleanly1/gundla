@@ -1,20 +1,25 @@
 import styled from "styled-components";
 
 const HeroContainer = styled.div`
-	height: auto;
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+	max-height: 142vh;
+	margin-bottom: 42px;
 
 	& .text {
 		display: flex;
 		flex-flow: column nowrap;
 		justify-content: center;
-		align-items: center;
+		align-items: flex-start;
 		padding: 32px 50px;
+		padding-bottom: 30vh;
 		background: ${(props) => props.bgColor || "#faf5ef"};
 		color: var(--brown);
 
 		& h1 {
 			font-family: var(--fontCon);
-			font-weight: 400;
+			font-weight: 700;
 			font-size: 28px;
 			letter-spacing: 0.08em;
 			padding-bottom: 16px;
@@ -37,28 +42,183 @@ const HeroContainer = styled.div`
 			color: var(--nearBlack);
 			margin-bottom: 24px;
 		}
+
+		& a {
+			align-self: flex-start;
+		}
+	}
+
+	& .images {
+		position: relative;
+		top: -25vh;
+		height: auto;
+		& .squareImg {
+			position: relative;
+			right: -11.5vw;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			overflow: hidden;
+			height: 80vw;
+			width: 80vw;
+
+			& img {
+				width: 100%;
+			}
+		}
+
+		& .reqImg {
+			position: relative;
+			top: -100px;
+			left: 0px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			overflow: hidden;
+			height: 50vw;
+			width: 80vw;
+			& img {
+				width: 100%;
+			}
+		}
+	}
+
+	& .showOnDesktop {
+		display: none;
+	}
+
+	@media (min-width: 768px) {
+		flex-flow: row nowrap;
+		margin: 72px calc(3.5vw - 16px);
+		margin-bottom: 102px;
+		max-height: 100vh;
+
+		& .text {
+			width: 40vw;
+			height: auto;
+			padding: 6vw 9vw 5vw 5vw;
+			justify-content: flex-start;
+			align-items: flex-start;
+
+			& h1 {
+				width: 100%;
+				font-size: 40px;
+				letter-spacing: 0.08em;
+				line-height: 47px;
+				padding-bottom: 32px;
+				color: var(--nearBlack);
+				border-bottom: 1px solid var(--brown);
+			}
+
+			& h3 {
+				font-family: var(--fontCon);
+				font-weight: 400;
+				font-size: 18px;
+				text-align: left;
+				width: 100%;
+				margin: 48px 0 32px 0;
+				color: var(--nearBlack);
+
+				&.showOnDesktop {
+					display: initial;
+					margin-top: 0;
+				}
+			}
+
+			& p {
+				font-size: 16px;
+				line-height: 28px;
+				color: var(--nearBlack);
+				margin-bottom: 28px;
+
+				:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		& .images {
+			position: static;
+			padding-top: 50px;
+			width: 45vw;
+			height: 105.5vh;
+			background-image: url("/images/ground.jpg");
+			background-origin: center;
+			background-position: center;
+			background-size: 100%;
+			& .squareImg {
+				position: relative;
+				right: 0;
+				left: -50px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+				height: 37vw;
+				width: 44vw;
+			}
+
+			& .reqImg {
+				position: relative;
+				top: -10vw;
+				left: -100px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+				max-height: 26vw;
+				width: 40vw;
+				border: 8px solid var(--beige);
+			}
+		}
 	}
 `;
 
 function Hero(props) {
+	const imageOne = props.images.heroImageOne.fields;
+	const imageTwo = props.images.heroImageTwo.fields;
+
 	return (
 		<HeroContainer bgColor={props.bgColor}>
 			<div className="text">
-				<h1>GUNDLA GÅRDSCAFÈ</h1>
-				<h3>Caféet i stan men mitt i naturen!</h3>
-				<p>
-					Vi är ett utomhuscafé i kanten av Delsjö Naturreservat som
-					utöver smarrig fika och mättande soppor, erbjuder en härlig
-					och avslappnad miljö bort från stress och oro. Här ersätter
-					vi stadens brus med trädens härliga sus.
-				</p>
-				<p>Du klär dig efter väder och cyklar eller promenerar hit. </p>
-				<p>
-					I höst samt vinter kommer vi tända brasor du kan värma dig
-					vid och vi har många platser under tak när regnet öser ner.{" "}
-				</p>
+				<h1>{props.title}</h1>
+
+				{props.children}
 			</div>
-			<div></div>
+			<div className="images">
+				<div className="squareImg">
+					<picture>
+						<source
+							media="(min-width: 1000px)"
+							srcSet={"https:" + imageOne.file.url + "?w=800"}
+						/>
+						<source
+							media="(min-width: 768px)"
+							srcSet={"https:" + imageOne.file.url + "?w=700"}
+						/>
+						<img
+							src={"https:" + imageOne.file.url + "?w=400"}
+							alt={imageOne.description}
+						/>
+					</picture>
+				</div>
+				<div className="reqImg">
+					<picture>
+						<source
+							media="(min-width: 1000px)"
+							srcSet={"https:" + imageTwo.file.url + "?w=800"}
+						/>
+						<source
+							media="(min-width: 768px)"
+							srcSet={"https:" + imageTwo.file.url + "?w=700"}
+						/>
+						<img
+							src={"https:" + imageTwo.file.url + "?w=400"}
+							alt={imageTwo.description}
+						/>
+					</picture>
+				</div>
+			</div>
 		</HeroContainer>
 	);
 }

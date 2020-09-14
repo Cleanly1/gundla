@@ -12,6 +12,7 @@ const NavMobile = styled.nav`
 	width: 100vw;
 	height: 13vh;
 	transition: box-shadow 1s ease;
+	z-index: 100;
 
 	&.scrolled {
 		box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);

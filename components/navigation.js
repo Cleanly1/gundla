@@ -47,6 +47,7 @@ const Nav = styled.nav`
 			position: fixed;
 			top: 0;
 			box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+			z-index: 100;
 		}
 	}
 
