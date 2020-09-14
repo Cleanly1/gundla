@@ -100,10 +100,15 @@ const SocialDiv = styled.div`
 	flex-flow: row nowrap;
 	justify-content: center;
 	margin: 12px 0 8px 0;
-	& img {
+
+	& a {
 		height: 44px;
 		width: 44px;
 		margin: 12px;
+		& img {
+			height: 44px;
+			width: 44px;
+		}
 	}
 
 	@media (min-width: 768px) {
@@ -154,12 +159,12 @@ function Footer() {
 			<SocialDiv>
 				<Link href="https://www.instagram.com/gundlagardscafe/">
 					<a>
-						<img src="/icons/instagram.png" />
+						<img src="/icons/instagram.svg" />
 					</a>
 				</Link>
 				<Link href="https://www.facebook.com/gundlagardscafe">
 					<a>
-						<img src="/icons/facebook.png" />
+						<img src="/icons/facebook.svg" />
 					</a>
 				</Link>
 			</SocialDiv>
