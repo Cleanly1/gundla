@@ -16,16 +16,25 @@ const StyledP = styled.p`
 	text-align: center;
 	margin: 8px 0 0 0;
 	font-weight: 300;
-	font-size: 18px;
+	font-size: 1rem;
 	line-height: 24px;
 `;
 
 const LogoDiv = styled.div`
-	width: 56px;
-	height: 56px;
+	width: 58px;
+	height: 58px;
 	margin: 24px 0 21px 0;
 	& img {
-		height: 56px;
+		height: 58px;
+	}
+
+	@media (min-width: 768px) {
+		width: 146px;
+		height: 146px;
+		order: 1;
+		& img {
+			height: 11vw;
+		}
 	}
 `;
 
@@ -62,6 +71,28 @@ const InfoDiv = styled.div`
 			font-size: 20px;
 		}
 	}
+
+	@media (min-width: 768px) {
+		flex-flow: row nowrap;
+		justify-content: space-evenly;
+		padding: 72px 0 64px 0;
+
+		& div {
+			width: 20vw;
+			height: 106px;
+			justify-content: flex-start;
+
+			:first-child {
+				height: 146px;
+			}
+			:last-child {
+				order: 2;
+			}
+			:nth-last-child(2) {
+				order: 2;
+			}
+		}
+	}
 `;
 
 const SocialDiv = styled.div`
@@ -74,15 +105,23 @@ const SocialDiv = styled.div`
 		width: 44px;
 		margin: 12px;
 	}
+
+	@media (min-width: 768px) {
+		margin: 30px 0 34px 0;
+
+		& a {
+			margin: 0 5px;
+		}
+	}
 `;
 
 function Footer() {
 	return (
 		<StyledFooter>
-			<LogoDiv>
-				<img src="/Logo-white.svg" />
-			</LogoDiv>
 			<InfoDiv>
+				<LogoDiv>
+					<img src="/Logo-white.svg" />
+				</LogoDiv>
 				<div>
 					<h1>Öppettider</h1>
 					<StyledP>Lör - Sön: 10 - 18</StyledP>
@@ -90,7 +129,7 @@ function Footer() {
 				<div>
 					<h1>Adress</h1>
 					<StyledP>
-						Gundla mosse <br /> 412 76 Göteborg
+						Gundla mosse <br /> 412 76 Göteborg <br /> Sverige
 					</StyledP>
 				</div>
 				<div>

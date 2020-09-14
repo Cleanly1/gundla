@@ -66,7 +66,6 @@ function Navigation() {
 		if (scrollY <= 142) {
 			navbar.classList.remove("scrolled");
 		}
-		console.log(navPos);
 	}
 
 	React.useEffect(() => {

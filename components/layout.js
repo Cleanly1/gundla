@@ -27,10 +27,11 @@ function Layout(props) {
 				}
 
 				.content {
+					padding: 10px 16px;
 					padding-top: 13.5vh;
 				}
 
-				@media (min-width: 770px) {
+				@media (min-width: 768px) {
 					.content {
 						padding-top: 0;
 					}

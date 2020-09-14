@@ -1,23 +1,12 @@
 import { fetchEntries } from "../utils/contentfulPosts";
 import Layout from "../components/layout";
+import Hero from "../components/hero";
 
 function Index(props) {
 	console.log(props);
 	return (
 		<Layout title="Gundla">
-			<h1>Home</h1>
-			<h1>Home</h1>
-			<h1>Home</h1>
-			<h1>Home</h1>
-			<h1>Home</h1>
-			<h1>Home</h1>
-			<h1>Home</h1>
-			<h1>Home</h1>
-			<h1>Home</h1>
-			<h1>Home</h1>
-			<h1>Home</h1>
-			<h1>Home</h1>
-			<h1>Home</h1>
+			<Hero bgColor="#faf5ef" />
 		</Layout>
 	);
 }
