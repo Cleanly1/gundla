@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Navigation from "./navigation";
 import MobileNav from "./mobileNav";
+import Footer from "./footer";
 
 function Layout(props) {
 	return (
@@ -11,7 +12,8 @@ function Layout(props) {
 
 			<Navigation />
 			<MobileNav />
-			<div>{props.children}</div>
+			<div className="content">{props.children}</div>
+			<Footer />
 			<style jsx global>{`
 				* {
 					margin: 0;
@@ -22,6 +24,17 @@ function Layout(props) {
 					min-height: 100vh;
 					max-width: 100vw;
 					overflow: hidden;
+				}
+
+				.content {
+					padding: 10px 16px;
+					padding-top: 13.5vh;
+				}
+
+				@media (min-width: 768px) {
+					.content {
+						padding-top: 0;
+					}
 				}
 			`}</style>
 		</div>
