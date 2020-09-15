@@ -2,18 +2,18 @@ import styled from "styled-components";
 import Link from "next/link";
 
 const Button = styled.button`
-	background: rgba(0, 0, 0, 0);
+	background: #f9f4ed;
+	border: 2px solid #4d4d4d;
 	min-height: 5vh;
-	min-width: 38.8vw;
+	min-width: 232px;
 	padding: 16px;
 	box-sizing: border-box;
 	text-transform: uppercase;
-	color: ${(props) => props.borderColor || "var(--brown)"};
-	border: 2px solid ${(props) => props.borderColor || "var(--brown)"};
+	color: var(--nearBlack);
 	font-family: var(--fontCon);
-	font-weight: 400;
+	font-weight: 700;
 	font-size: 16px;
-	box-shadow: 2px 2px 4px rgba(57, 57, 57, 0.4);
+	box-shadow: 2px 2px 4px rgba(77, 77, 77, 0.25);
 
 	@media (min-width: 768px) {
 		min-width: 20vw;
@@ -23,9 +23,9 @@ const Button = styled.button`
 function Cta(props) {
 	return (
 		<Link href={props.link || ""}>
-			<a>
-				<Button borderColor={props.borderColor}>{props.text}</Button>
-			</a>
+			<Button>
+				<a>{props.text}</a>
+			</Button>
 		</Link>
 	);
 }

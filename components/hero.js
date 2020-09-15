@@ -36,15 +36,18 @@ const HeroContainer = styled.div`
 			color: var(--nearBlack);
 		}
 
-		& p {
-			font-size: 16px;
-			line-height: 24px;
-			color: var(--nearBlack);
+		& .richText {
 			margin-bottom: 24px;
+			& p {
+				font-size: 16px;
+				line-height: 24px;
+				color: var(--nearBlack);
+				margin-bottom: 24px;
+			}
 		}
 
-		& a {
-			align-self: flex-start;
+		& button {
+			align-self: center;
 		}
 	}
 
@@ -69,16 +72,17 @@ const HeroContainer = styled.div`
 
 		& .reqImg {
 			position: relative;
-			top: -100px;
+			top: -40vw;
 			left: 0px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			overflow: hidden;
-			height: 50vw;
-			width: 80vw;
+			height: 60vw;
+			width: 60vw;
 			& img {
 				width: 100%;
+				transform: rotateY(180deg);
 			}
 		}
 	}
@@ -91,12 +95,12 @@ const HeroContainer = styled.div`
 		flex-flow: row nowrap;
 		margin: 72px calc(3.5vw - 16px);
 		margin-bottom: 102px;
-		max-height: 100vh;
+		max-height: 95vh;
 
 		& .text {
 			width: 40vw;
 			height: auto;
-			padding: 6vw 9vw 5vw 5vw;
+			padding: 6vw 11vw 5vw 5vw;
 			justify-content: flex-start;
 			align-items: flex-start;
 
@@ -141,11 +145,6 @@ const HeroContainer = styled.div`
 			position: static;
 			padding-top: 50px;
 			width: 45vw;
-			height: 105.5vh;
-			background-image: url("/images/ground.jpg");
-			background-origin: center;
-			background-position: center;
-			background-size: 100%;
 			& .squareImg {
 				position: relative;
 				right: 0;
@@ -160,21 +159,21 @@ const HeroContainer = styled.div`
 
 			& .reqImg {
 				position: relative;
-				top: -10vw;
+				top: -20vw;
 				left: -100px;
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				overflow: hidden;
 				max-height: 26vw;
-				width: 40vw;
-				border: 8px solid var(--beige);
+				width: 26vw;
 			}
 		}
 	}
 `;
 
 function Hero(props) {
+	console.log(props);
 	const imageOne = props.images.heroImageOne.fields;
 	const imageTwo = props.images.heroImageTwo.fields;
 

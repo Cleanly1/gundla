@@ -1,35 +1,36 @@
-import { fetchEntries } from "../utils/contentfulPosts";
+import { fetchEntriesByType } from "../utils/contentfulPosts";
 import Layout from "../components/layout";
 import Hero from "../components/hero";
 import Cta from "../components/CTAbutton";
-import Info from "../components/homeInfo";
+import Info from "../components/home-page/homeInfo";
+import About from "../components/home-page/aboutUs";
 
 function Index(props) {
 	console.log(props);
+
+	React.useEffect(() => {
+		document.querySelector(".richText").innerHTML = props.posts.heroText;
+		document.querySelector(".aboutText").innerHTML = props.posts.aboutUs;
+	});
+
 	return (
 		<Layout title="Gundla">
 			<Hero
 				title="GUNDLA GÅRDSCAFÈ"
 				bgColor="#faf5ef"
-				images={props.posts[0]}
+				images={props.posts}
 			>
 				<h3>Caféet i stan men mitt i naturen!</h3>
-				<p>
-					Vi är ett utomhuscafé i kanten av Delsjö Naturreservat som
-					utöver smarrig fika och mättande soppor, erbjuder en härlig
-					och avslappnad miljö bort från stress och oro. Här ersätter
-					vi stadens brus med trädens härliga sus.
-				</p>
-				<p>Du klär dig efter väder och cyklar eller promenerar hit. </p>
-				<p>
-					I höst samt vinter kommer vi tända brasor du kan värma dig
-					vid och vi har många platser under tak när regnet öser ner.{" "}
-				</p>
+				<div className="richText">.</div>
 				<h3 className="showOnDesktop">Välkomna till oss</h3>
 				<Cta text="Läs mer" borderColor="#014335" />
 			</Hero>
 
 			<Info />
+			<About image={props.posts.aboutImage.fields}>
+				<div className="aboutText"></div>
+				<Cta text="läs mer" link="/about" borderColor="#769D6C" />
+			</About>
 		</Layout>
 	);
 }
@@ -37,10 +38,9 @@ function Index(props) {
 export default Index;
 
 export async function getStaticProps() {
-	const res = await fetchEntries();
-	const posts = await res.map((p) => {
-		return p.fields;
-	});
+	const posts = await fetchEntriesByType("1a0T4pkbMELb4s1r6SmKOY");
+	console.log(posts);
+
 	return {
 		props: {
 			posts,

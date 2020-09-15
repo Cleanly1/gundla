@@ -85,7 +85,7 @@ function Navigation() {
 					<a>Startsida</a>
 				</Link>
 				<Link href="menu">
-					<a>Mat</a>
+					<a>Café</a>
 				</Link>
 				<Link href="about">
 					<a>Om oss</a>
