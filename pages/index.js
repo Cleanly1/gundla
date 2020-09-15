@@ -3,14 +3,14 @@ import Layout from "../components/layout";
 import Hero from "../components/hero";
 import Cta from "../components/CTAbutton";
 import Info from "../components/home-page/homeInfo";
-import About from "../components/home-page/aboutUs";
+import About from "../components/textSection";
 
 function Index(props) {
 	console.log(props);
 
 	React.useEffect(() => {
 		document.querySelector(".richText").innerHTML = props.posts.heroText;
-		document.querySelector(".aboutText").innerHTML = props.posts.aboutUs;
+		document.querySelector(".textContent").innerHTML = props.posts.aboutUs;
 	});
 
 	return (
@@ -27,8 +27,12 @@ function Index(props) {
 			</Hero>
 
 			<Info />
-			<About image={props.posts.aboutImage.fields}>
-				<div className="aboutText"></div>
+			<About
+				image={props.posts.aboutImage.fields}
+				bgColor="#BBCEB6"
+				imgBG="#769D6C"
+			>
+				<div className="textContent"></div>
 				<Cta text="läs mer" link="/about" borderColor="#769D6C" />
 			</About>
 		</Layout>

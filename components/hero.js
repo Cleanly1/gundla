@@ -3,8 +3,9 @@ import styled from "styled-components";
 const HeroContainer = styled.div`
 	display: flex;
 	flex-flow: column nowrap;
-	width: 100%;
+	width: calc(100vw - 32px);
 	max-height: 142vh;
+	padding: 0 16px;
 	margin-bottom: 42px;
 
 	& .text {
@@ -15,7 +16,7 @@ const HeroContainer = styled.div`
 		padding: 32px 50px;
 		padding-bottom: 30vh;
 		background: ${(props) => props.bgColor || "#faf5ef"};
-		color: var(--brown);
+		color: var(--nearBlack);
 
 		& h1 {
 			font-family: var(--fontCon);
@@ -33,7 +34,6 @@ const HeroContainer = styled.div`
 			text-align: left;
 			width: 100%;
 			margin: 24px 0;
-			color: var(--nearBlack);
 		}
 
 		& .richText {
@@ -41,7 +41,6 @@ const HeroContainer = styled.div`
 			& p {
 				font-size: 16px;
 				line-height: 24px;
-				color: var(--nearBlack);
 				margin-bottom: 24px;
 			}
 		}
@@ -93,7 +92,9 @@ const HeroContainer = styled.div`
 
 	@media (min-width: 768px) {
 		flex-flow: row nowrap;
-		margin: 72px calc(3.5vw - 16px);
+		margin: 72px 0;
+		padding: 0 48px;
+		width: calc(100vw - 96px);
 		margin-bottom: 102px;
 		max-height: 95vh;
 
@@ -138,6 +139,9 @@ const HeroContainer = styled.div`
 				:last-child {
 					margin-bottom: 0;
 				}
+			}
+			& button {
+				align-self: flex-start;
 			}
 		}
 

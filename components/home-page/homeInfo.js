@@ -3,7 +3,15 @@ import styled from "styled-components";
 const InfoSection = styled.section`
 	display: flex;
 	flex-flow: column nowrap;
-	padding: 0 61px;
+	width: calc(100vw - 144px);
+	padding: 16px 72px;
+	margin-bottom: 96px;
+	overflow: hidden;
+	background-image: url("/images/ground.jpg");
+	background-size: contain;
+	background-color: rgba(255, 255, 255, 0.95);
+	background-blend-mode: lighten;
+
 	& div {
 		display: flex;
 		flex-flow: column nowrap;
@@ -11,6 +19,7 @@ const InfoSection = styled.section`
 		align-items: center;
 		margin: 12px 0;
 		padding: 16px 24px;
+
 		& h1 {
 			margin-top: 24px;
 			font-family: var(--fontCon);
@@ -40,10 +49,18 @@ const InfoSection = styled.section`
 	@media (min-width: 768px) {
 		display: flex;
 		flex-flow: row nowrap;
-		padding: 72px 16vw;
+		justify-content: space-evenly;
+		padding: 48px 10vw;
+		width: calc(100vw - 20vw);
 
 		& div {
-			margin: 0 36px;
+			width: 25%;
+			margin: 0 2vw;
+			& div {
+				width: 80px;
+				height: 80px;
+				background: gray;
+			}
 		}
 	}
 `;

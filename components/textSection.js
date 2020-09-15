@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import Cta from "../CTAbutton";
+import Cta from "./CTAbutton";
 
 const StyledSection = styled.section`
 	display: flex;
 	flex-flow: column nowrap;
+	width: calc(100vw - 32px);
+	padding: 0 16px;
 
 	& .imagecontainer {
 		position: relative;
@@ -12,7 +14,7 @@ const StyledSection = styled.section`
 		width: 80vw;
 		height: 80vw;
 		margin-bottom: 24px;
-		background: var(--lightGreen);
+		background: ${(props) => props.bgImg || "var(--leafGreen)"};
 		margin: 24px 24px 0 24px;
 		z-index: 5;
 
@@ -34,17 +36,18 @@ const StyledSection = styled.section`
 			}
 		}
 	}
-	& .text {
+	& .textWrapper {
 		display: flex;
 		flex-flow: column nowrap;
 		position: relative;
 		top: -24px;
-		background: rgba(118, 157, 108, 0.5);
+		background: ${(props) => props.bgColor || "var(--lightGreen)"};
 		padding-top: 45px;
 		z-index: 4;
 
-		& .aboutText {
+		& .textContent {
 			padding: 32px 24px 24px 24px;
+			color: var(--nearBlack);
 
 			& h1 {
 				width: 100%;
@@ -55,9 +58,9 @@ const StyledSection = styled.section`
 				line-height: 33px;
 				letter-spacing: 0.08em;
 				text-transform: uppercase;
-				color: var(--nearBlack);
 				margin-bottom: 24px;
-				border-bottom: 2px solid var(--lightGreen);
+				border-bottom: 2px solid
+					${(props) => props.bgImg || "var(--leafGreen)"};
 			}
 
 			& p {
@@ -81,7 +84,8 @@ const StyledSection = styled.section`
 
 	@media (min-width: 768px) {
 		flex-flow: row nowrap;
-		margin: 0 calc(3.5vw - 16px);
+		padding: 0 48px;
+		width: calc(100vw - 96px);
 		background: none;
 		& .wrapper {
 			width: 0vw;
@@ -92,7 +96,7 @@ const StyledSection = styled.section`
 				width: 35vw;
 				height: 35vw;
 				margin-bottom: 24px;
-				background: var(--lightGreen);
+				background: ${(props) => props.bgImg || "var(--leafGreen)"};
 
 				& .image {
 					position: relative;
@@ -111,15 +115,14 @@ const StyledSection = styled.section`
 				}
 			}
 		}
-		& .text {
-			background: rgba(118, 157, 108, 0.5);
+		& .textWrapper {
 			display: flex;
 			flex-flow: column nowrap;
 			width: 50vw;
 			padding-top: 0;
 			margin-left: 30vw;
 			padding: 24px 24px 24px 15vw;
-			& .aboutText {
+			& .textContent {
 				padding: 72px 24px 24px 24px;
 
 				& h1 {
@@ -127,20 +130,12 @@ const StyledSection = styled.section`
 					padding-bottom: 16px;
 					font-family: var(--fontCon);
 					font-weight: bold;
-					font-size: 28px;
-					line-height: 33px;
-					letter-spacing: 0.08em;
 					text-transform: uppercase;
-					color: var(--nearBlack);
 					margin-bottom: 48px;
-					border-bottom: 2px solid var(--lightGreen);
 				}
 
 				& p {
 					width: 100%;
-					color: var(--nearBlack);
-					font-weight: normal;
-					font-size: 16px;
 					line-height: 28px;
 					margin-bottom: 24px;
 					:nth-last-child(2) {
@@ -158,8 +153,8 @@ const StyledSection = styled.section`
 	}
 
 	@media (min-width: 1024px) {
-		& .text {
-			& .aboutText {
+		& .textWrapper {
+			& .textContent {
 				& p {
 					width: 90%;
 				}
@@ -173,11 +168,11 @@ const StyledSection = styled.section`
 	}
 `;
 
-function AboutSection(props) {
+function TextSection(props) {
 	console.log(props);
 	const imageInfo = props.image;
 	return (
-		<StyledSection>
+		<StyledSection bgColor={props.bgColor} bgImg={props.imgBG}>
 			<div className="wrapper">
 				<div className="imagecontainer">
 					<div className="image">
@@ -202,9 +197,9 @@ function AboutSection(props) {
 					</div>
 				</div>
 			</div>
-			<div class="text">{props.children}</div>
+			<div className="textWrapper">{props.children}</div>
 		</StyledSection>
 	);
 }
 
-export default AboutSection;
+export default TextSection;
