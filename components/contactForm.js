@@ -16,7 +16,7 @@ const ContactForm = () => {
 				form.reset();
 				setStatus("Tack för ditt mail!");
 			} else {
-				setStatus("Inte skickat");
+				setStatus("Något gick fel försök igen.");
 			}
 		};
 		xhr.send(data);
