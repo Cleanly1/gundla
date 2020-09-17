@@ -11,8 +11,8 @@ export async function fetchEntries() {
 	return entries.items;
 }
 
-export async function fetchEntriesByType(type) {
-	const entries = await client.getEntry(type).then((entry) => {
+export async function fetchEntriesByID(ID) {
+	const entries = await client.getEntry(ID).then((entry) => {
 		console.log(entry.fields);
 		const rawRichTextField = entry.fields.heroText;
 		const aboutUs = entry.fields.aboutUs;
@@ -24,4 +24,4 @@ export async function fetchEntriesByType(type) {
 	return entries;
 }
 
-export default { fetchEntries, fetchEntriesByType };
+export default { fetchEntries, fetchEntriesByID };

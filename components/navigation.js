@@ -37,6 +37,10 @@ const Nav = styled.nav`
 		padding: 15px 0 13px 0;
 		& a {
 			font-family: var(--fontCon);
+			font-weight: bold;
+			font-size: 20px;
+			line-height: 23px;
+			letter-spacing: 0.1em;
 			text-decoration: none;
 			color: var(--brown);
 			padding: 5px;

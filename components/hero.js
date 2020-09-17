@@ -16,11 +16,13 @@ const HeroContainer = styled.div`
 		padding: 32px 50px;
 		padding-bottom: 30vh;
 		background: ${(props) => props.bgColor || "#faf5ef"};
+		border-radius: 2px;
 		color: var(--nearBlack);
 
 		& h1 {
 			font-family: var(--fontCon);
 			font-weight: 700;
+			width: 100%;
 			font-size: 28px;
 			letter-spacing: 0.08em;
 			padding-bottom: 16px;
@@ -53,7 +55,7 @@ const HeroContainer = styled.div`
 	& .images {
 		position: relative;
 		top: -25vh;
-		height: auto;
+		height: 40vw;
 		& .squareImg {
 			position: relative;
 			right: -11.5vw;
@@ -63,7 +65,7 @@ const HeroContainer = styled.div`
 			overflow: hidden;
 			height: 80vw;
 			width: 80vw;
-
+			border-radius: 2px;
 			& img {
 				width: 100%;
 			}
@@ -79,6 +81,7 @@ const HeroContainer = styled.div`
 			overflow: hidden;
 			height: 60vw;
 			width: 60vw;
+			border-radius: 2px;
 			& img {
 				width: 100%;
 				transform: rotateY(180deg);
@@ -90,12 +93,11 @@ const HeroContainer = styled.div`
 		display: none;
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 1025px) {
 		flex-flow: row nowrap;
-		margin: 72px 0;
+		margin: 72px 0 0 0;
 		padding: 0 48px;
 		width: calc(100vw - 96px);
-		margin-bottom: 102px;
 		max-height: 95vh;
 
 		& .text {
@@ -147,12 +149,12 @@ const HeroContainer = styled.div`
 
 		& .images {
 			position: static;
-			padding-top: 50px;
 			width: 45vw;
+			height: 10px;
 			& .squareImg {
 				position: relative;
-				right: 0;
-				left: -50px;
+				top: 4vh;
+				left: -4vw;
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -163,14 +165,14 @@ const HeroContainer = styled.div`
 
 			& .reqImg {
 				position: relative;
-				top: -20vw;
-				left: -100px;
+				top: -10vw;
+				left: -9vw;
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				overflow: hidden;
-				max-height: 26vw;
-				width: 26vw;
+				max-height: 25vw;
+				width: 40vw;
 			}
 		}
 	}

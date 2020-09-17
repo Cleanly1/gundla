@@ -1,4 +1,4 @@
-import { fetchEntriesByType } from "../utils/contentfulPosts";
+import { fetchEntriesByID } from "../utils/contentfulPosts";
 import Layout from "../components/layout";
 import Hero from "../components/hero";
 import Cta from "../components/CTAbutton";
@@ -42,7 +42,7 @@ function Index(props) {
 export default Index;
 
 export async function getStaticProps() {
-	const posts = await fetchEntriesByType("1a0T4pkbMELb4s1r6SmKOY");
+	const posts = await fetchEntriesByID("1a0T4pkbMELb4s1r6SmKOY");
 	console.log(posts);
 
 	return {

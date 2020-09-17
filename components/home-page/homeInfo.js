@@ -5,7 +5,6 @@ const InfoSection = styled.section`
 	flex-flow: column nowrap;
 	width: calc(100vw - 144px);
 	padding: 16px 72px;
-	margin-bottom: 96px;
 	overflow: hidden;
 	background-image: url("/images/ground.jpg");
 	background-size: contain;
@@ -50,7 +49,7 @@ const InfoSection = styled.section`
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: space-evenly;
-		padding: 48px 10vw;
+		padding: 144px 10vw;
 		width: calc(100vw - 20vw);
 
 		& div {

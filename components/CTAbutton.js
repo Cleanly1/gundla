@@ -13,6 +13,7 @@ const Button = styled.button`
 	font-family: var(--fontCon);
 	font-weight: 700;
 	font-size: 16px;
+	border-radius: 2px;
 	box-shadow: 2px 2px 4px rgba(77, 77, 77, 0.25);
 
 	@media (min-width: 768px) {

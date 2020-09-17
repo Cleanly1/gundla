@@ -16,6 +16,7 @@ const StyledSection = styled.section`
 		margin-bottom: 24px;
 		background: ${(props) => props.bgImg || "var(--leafGreen)"};
 		margin: 24px 24px 0 24px;
+		border-radius: 2px;
 		z-index: 5;
 
 		& .image {
@@ -29,6 +30,7 @@ const StyledSection = styled.section`
 			height: 85vw;
 			overflow: hidden;
 			background: none;
+			border-radius: 2px;
 			z-index: 5;
 
 			& img {
@@ -82,7 +84,52 @@ const StyledSection = styled.section`
 		}
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 769px) {
+		& .imagecontainer {
+			position: relative;
+			top: -24px;
+			left: -24px;
+			width: 60vw;
+			height: 60vw;
+			margin-bottom: 24px;
+			background: ${(props) => props.bgImg || "var(--leafGreen)"};
+			margin: 24px 24px 0 24px;
+			z-index: 5;
+
+			& .image {
+				position: relative;
+				top: 24px;
+				left: 9%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 65vw;
+				height: 65vw;
+				overflow: hidden;
+				background: none;
+				z-index: 5;
+
+				& img {
+					width: 100%;
+				}
+			}
+		}
+		& .textWrapper {
+			padding-top: 75px;
+			& .textContent {
+				& p {
+					width: 80%;
+				}
+			}
+			& button {
+				width: 50%;
+				align-self: flex-start;
+				margin: 0 0 64px 26px;
+			}
+		}
+	}
+
+	@media (min-width: 1025px) {
 		flex-flow: row nowrap;
 		padding: 0 48px;
 		width: calc(100vw - 96px);
@@ -148,21 +195,6 @@ const StyledSection = styled.section`
 				width: 50%;
 				align-self: flex-start;
 				margin: 0 0 32px 26px;
-			}
-		}
-	}
-
-	@media (min-width: 1024px) {
-		& .textWrapper {
-			& .textContent {
-				& p {
-					width: 90%;
-				}
-			}
-			& button {
-				width: 50%;
-				align-self: flex-start;
-				margin: 0 0 64px 26px;
 			}
 		}
 	}
