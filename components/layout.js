@@ -27,7 +27,7 @@ function Layout(props) {
 				}
 
 				.content {
-					padding: 10px 16px;
+					padding: 10px 0;
 					padding-top: 13.5vh;
 				}
 

@@ -145,13 +145,13 @@ function Footer() {
 					<h1>Länkar</h1>
 					<ul>
 						<Link href="">
+							<a>Hyr vår plats?</a>
+						</Link>
+						<Link href="">
 							<a>Catering</a>
 						</Link>
 						<Link href="">
-							<a>Hyr vår plats</a>
-						</Link>
-						<Link href="">
-							<a>Hitta hit</a>
+							<a>Café</a>
 						</Link>
 					</ul>
 				</div>

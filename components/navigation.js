@@ -37,6 +37,10 @@ const Nav = styled.nav`
 		padding: 15px 0 13px 0;
 		& a {
 			font-family: var(--fontCon);
+			font-weight: bold;
+			font-size: 20px;
+			line-height: 23px;
+			letter-spacing: 0.1em;
 			text-decoration: none;
 			color: var(--brown);
 			padding: 5px;
@@ -47,6 +51,7 @@ const Nav = styled.nav`
 			position: fixed;
 			top: 0;
 			box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+			z-index: 100;
 		}
 	}
 
@@ -84,7 +89,7 @@ function Navigation() {
 					<a>Startsida</a>
 				</Link>
 				<Link href="menu">
-					<a>Mat</a>
+					<a>Café</a>
 				</Link>
 				<Link href="about">
 					<a>Om oss</a>
