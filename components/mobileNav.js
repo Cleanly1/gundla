@@ -71,7 +71,7 @@ const LinkDiv = styled.div`
 		margin: 24px 0;
 		transition-duration: 0.8s;
 
-		:last-child {
+		&:last-child {
 			margin-bottom: 82px;
 		}
 
@@ -80,6 +80,10 @@ const LinkDiv = styled.div`
 			border-bottom: 1px solid var(--orange);
 			transition-duration: 0.2s;
 		}
+	}
+	& .active {
+		color: var(--orange);
+		border-bottom: 2px solid var(--orange);
 	}
 
 	.imageDiv {
@@ -104,7 +108,6 @@ function MobileNav() {
 		const linkDiv = document.querySelector(LinkDiv);
 		const links = document.querySelectorAll(".links");
 		const logo = document.querySelector(`${LinkDiv} .imageDiv`);
-		console.log(logo);
 		linkDiv.classList.toggle("show");
 
 		buttons.forEach((button) => {
@@ -116,6 +119,14 @@ function MobileNav() {
 				links[i].classList.toggle("showText");
 			}
 		}, 800);
+	}
+	function handleNavigation(location) {
+		const desktopLinks = document.querySelectorAll(".links");
+		desktopLinks.forEach((link) => {
+			if (link.pathname === location.pathname) {
+				link.classList.add("active");
+			}
+		});
 	}
 
 	function handleScroll(e) {
@@ -129,6 +140,7 @@ function MobileNav() {
 
 	React.useEffect(() => {
 		window.addEventListener("scroll", handleScroll);
+		handleNavigation(window.location);
 		return () => window.removeEventListener("scroll", handleScroll);
 	});
 

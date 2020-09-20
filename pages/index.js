@@ -1,4 +1,4 @@
-import { fetchEntriesByID } from "../utils/contentfulPosts";
+import { fetchEntriesByID, richTextToHtml } from "../utils/contentfulPosts";
 import Layout from "../components/layout";
 import Hero from "../components/hero";
 import Cta from "../components/CTAbutton";
@@ -7,14 +7,13 @@ import About from "../components/textSection";
 
 function Index(props) {
 	console.log(props);
-
 	React.useEffect(() => {
 		document.querySelector(".richText").innerHTML = props.posts.heroText;
 		document.querySelector(".textContent").innerHTML = props.posts.aboutUs;
 	});
 
 	return (
-		<Layout title="Gundla">
+		<Layout title="Gundla" openHours={props.hours.openHours}>
 			<Hero
 				title="GUNDLA GÅRDSCAFÈ"
 				bgColor="#faf5ef"
@@ -43,11 +42,16 @@ export default Index;
 
 export async function getStaticProps() {
 	const posts = await fetchEntriesByID("1a0T4pkbMELb4s1r6SmKOY");
-	console.log(posts);
+	const hours = await fetchEntriesByID("Mj8bQjVAwHv8m3rWjPGrC");
+
+	hours.openHours = richTextToHtml(hours.openHours);
+	posts.heroText = richTextToHtml(posts.heroText);
+	posts.aboutUs = richTextToHtml(posts.aboutUs);
 
 	return {
 		props: {
 			posts,
+			hours,
 		},
 	};
 }

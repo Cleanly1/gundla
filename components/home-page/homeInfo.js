@@ -49,16 +49,21 @@ const InfoSection = styled.section`
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: space-evenly;
-		padding: 144px 10vw;
-		width: calc(100vw - 20vw);
+		padding: 144px 8vw 72px 5vw;
+		width: 87vw;
+		margin-bottom: 24px;
 
 		& div {
-			width: 25%;
+			width: 34%;
 			margin: 0 2vw;
 			& div {
 				width: 80px;
-				height: 80px;
+				height: 60px;
 				background: gray;
+			}
+
+			& p {
+				width: 100%;
 			}
 		}
 	}

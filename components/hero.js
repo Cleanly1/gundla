@@ -56,6 +56,19 @@ const HeroContainer = styled.div`
 		position: relative;
 		top: -25vh;
 		height: 40vw;
+		& .logo {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			overflow: hidden;
+			bottom: 59vh;
+			height: 30vw;
+			width: 30vw;
+			& img {
+				width: 100%;
+			}
+		}
 		& .squareImg {
 			position: relative;
 			right: -11.5vw;
@@ -79,12 +92,11 @@ const HeroContainer = styled.div`
 			justify-content: center;
 			align-items: center;
 			overflow: hidden;
-			height: 60vw;
-			width: 60vw;
+			height: 50vw;
+			width: 80vw;
 			border-radius: 2px;
 			& img {
 				width: 100%;
-				transform: rotateY(180deg);
 			}
 		}
 	}
@@ -151,6 +163,20 @@ const HeroContainer = styled.div`
 			position: static;
 			width: 45vw;
 			height: 10px;
+			& .logo {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+				bottom: 84vh;
+				right: 8vw;
+				height: 15vw;
+				width: 15vw;
+				& img {
+					width: 100%;
+				}
+			}
 			& .squareImg {
 				position: relative;
 				top: 4vh;
@@ -159,8 +185,12 @@ const HeroContainer = styled.div`
 				justify-content: center;
 				align-items: center;
 				overflow: hidden;
-				height: 37vw;
-				width: 44vw;
+				height: 38vw;
+				width: 43vw;
+				& img {
+					position: relative;
+					top: 50px;
+				}
 			}
 
 			& .reqImg {
@@ -179,7 +209,6 @@ const HeroContainer = styled.div`
 `;
 
 function Hero(props) {
-	console.log(props);
 	const imageOne = props.images.heroImageOne.fields;
 	const imageTwo = props.images.heroImageTwo.fields;
 
@@ -222,6 +251,9 @@ function Hero(props) {
 							alt={imageTwo.description}
 						/>
 					</picture>
+				</div>
+				<div className="logo">
+					<img src="/Logo-beige.svg" alt="Gundla logo" />
 				</div>
 			</div>
 		</HeroContainer>
