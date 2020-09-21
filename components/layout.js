@@ -31,6 +31,7 @@ function Layout(props) {
 				.content {
 					padding: 10px 0;
 					padding-top: 13.5vh;
+					color: #4d4d4d;
 				}
 
 				@media (min-width: 768px) {
