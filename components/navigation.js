@@ -45,6 +45,15 @@ const Nav = styled.nav`
 			color: var(--brown);
 			padding: 5px;
 			margin: 0 10px;
+
+			:hover {
+				color: var(--orange);
+			}
+		}
+
+		& .active {
+			color: var(--orange);
+			border-bottom: 2px solid var(--orange);
 		}
 
 		&.scrolled {
@@ -72,9 +81,18 @@ function Navigation() {
 			navbar.classList.remove("scrolled");
 		}
 	}
+	function handleNavigation(location) {
+		const desktopLinks = document.querySelectorAll(".navbar a");
+		desktopLinks.forEach((link) => {
+			if (link.pathname === location.pathname) {
+				link.classList.add("active");
+			}
+		});
+	}
 
 	React.useEffect(() => {
 		window.addEventListener("scroll", handleScroll);
+		handleNavigation(window.location);
 		return () => window.removeEventListener("scroll", handleScroll);
 	});
 	return (

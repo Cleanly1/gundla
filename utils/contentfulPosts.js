@@ -13,15 +13,14 @@ export async function fetchEntries() {
 
 export async function fetchEntriesByID(ID) {
 	const entries = await client.getEntry(ID).then((entry) => {
-		console.log(entry.fields);
-		const rawRichTextField = entry.fields.heroText;
-		const aboutUs = entry.fields.aboutUs;
-		entry.fields.heroText = documentToHtmlString(rawRichTextField);
-		entry.fields.aboutUs = documentToHtmlString(aboutUs);
 		return entry.fields;
 	});
 
 	return entries;
 }
 
-export default { fetchEntries, fetchEntriesByID };
+export function richTextToHtml(text) {
+	return documentToHtmlString(text);
+}
+
+export default { fetchEntries, fetchEntriesByID, richTextToHtml };

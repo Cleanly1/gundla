@@ -2,6 +2,7 @@ import Head from "next/head";
 import Navigation from "./navigation";
 import MobileNav from "./mobileNav";
 import Footer from "./footer";
+import Popup from "./mobilPopup";
 
 function Layout(props) {
 	return (
@@ -13,7 +14,8 @@ function Layout(props) {
 			<Navigation />
 			<MobileNav />
 			<div className="content">{props.children}</div>
-			<Footer />
+			<Popup openHours={props.openHours} />
+			<Footer openHours={props.openHours} />
 			<style jsx global>{`
 				* {
 					margin: 0;
@@ -42,3 +44,13 @@ function Layout(props) {
 }
 
 export default Layout;
+
+export async function getStaticProps() {
+	console.log(posts);
+
+	return {
+		props: {
+			posts,
+		},
+	};
+}
