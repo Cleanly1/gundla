@@ -4,6 +4,7 @@ import Hero from "../components/hero";
 import Cta from "../components/CTAbutton";
 import Info from "../components/home-page/homeInfo";
 import About from "../components/textSection";
+import Event from "../components/home-page/events";
 
 function Index(props) {
 	console.log(props);
@@ -34,6 +35,7 @@ function Index(props) {
 				<div className="textContent"></div>
 				<Cta text="läs mer" link="/about" borderColor="#769D6C" />
 			</About>
+			<Event events={[]} eventText={props.eventsInfo}></Event>
 		</Layout>
 	);
 }
@@ -43,7 +45,8 @@ export default Index;
 export async function getStaticProps() {
 	const posts = await fetchEntriesByID("1a0T4pkbMELb4s1r6SmKOY");
 	const hours = await fetchEntriesByID("Mj8bQjVAwHv8m3rWjPGrC");
-
+	const eventsInfo = await fetchEntriesByID("6sO9wSIadxSWFhbL9tXjlp");
+	eventsInfo.text = richTextToHtml(eventsInfo.text);
 	hours.openHours = richTextToHtml(hours.openHours);
 	posts.heroText = richTextToHtml(posts.heroText);
 	posts.aboutUs = richTextToHtml(posts.aboutUs);
@@ -52,6 +55,7 @@ export async function getStaticProps() {
 		props: {
 			posts,
 			hours,
+			eventsInfo,
 		},
 	};
 }

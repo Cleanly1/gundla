@@ -129,6 +129,7 @@ const InfoDiv = styled.div`
 		}
 
 		& h1 {
+			font-family: var(--fontCon);
 			margin-bottom: 12px;
 			text-transform: uppercase;
 			font-size: 18px;
