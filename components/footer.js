@@ -203,12 +203,23 @@ function Footer(props) {
 				<h1>Tillbaka till toppen</h1>
 			</button>
 			<InfoDiv>
+				<div className="openHours">
+					<h1>Öppettider</h1>
+					<div className="openHoursDiv"></div>
+				</div>
+				<div>
+					<h1>Adress</h1>
+					<StyledP>
+						Gundla mosse <br /> 412 76 Göteborg <br /> Sverige
+					</StyledP>
+				</div>
 				<div>
 					<h1>Kontakt</h1>
 					<Link href="mailto:gundlagardscafé@gmail.com">
 						<a>gundlagardscafé@gmail.com</a>
 					</Link>
 				</div>
+
 				<div className="socials">
 					<h1>Sociala medier</h1>
 					<div>
@@ -223,16 +234,6 @@ function Footer(props) {
 							</a>
 						</Link>
 					</div>
-				</div>
-				<div>
-					<h1>Adress</h1>
-					<StyledP>
-						Gundla mosse <br /> 412 76 Göteborg <br /> Sverige
-					</StyledP>
-				</div>
-				<div className="openHours">
-					<h1>Öppettider</h1>
-					<div className="openHoursDiv"></div>
 				</div>
 			</InfoDiv>
 			<p className="copyDesktop">
