@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const ContactForm = (props) => {
-	console.log(props.text);
+	// console.log(props.contactText);
 	const [status, setStatus] = useState(null);
 
 	const submitForm = (event) => {
@@ -27,10 +27,10 @@ const ContactForm = (props) => {
 	};
 
 	const StyledImg = styled.div`
-		margin: 0 0 -4px 20px;
+		margin: 0 0 -4px 30px;
 
 		& img {
-			width: calc(100% - 20px);
+			width: calc(100% - 30px);
 		}
 
 		@media (min-width: 768px) {
@@ -48,7 +48,7 @@ const ContactForm = (props) => {
 	const StyledForm = styled.div`
 		background: ${props.bgColor || "#BBCEB6"};
 		/* width: 100%; */
-		margin: 0 10px 0 10px;
+		margin: 0 20px 0 20px;
 		padding: 10px;
 
 		& h2 {
@@ -59,6 +59,7 @@ const ContactForm = (props) => {
 		& .text p {
 			padding: 10px 0 10px 0;
 		}
+
 		& input {
 			height: 35px;
 			font-size: 100%;
@@ -70,6 +71,7 @@ const ContactForm = (props) => {
 			width: 100%;
 			margin: 0 0 10px 0;
 		}
+
 		& textarea {
 			height: 80px;
 			font-size: 100%;
@@ -80,7 +82,9 @@ const ContactForm = (props) => {
 			outline: none;
 			width: 100%;
 			margin: 0 0 10px 0;
+			resize: none;
 		}
+
 		& label {
 			display: block;
 		}
@@ -89,16 +93,22 @@ const ContactForm = (props) => {
 			font-size: 100%;
 			font-family: inherit;
 			background: white;
-			border: 1px solid #4d4d4d;
+			border: 2px solid #4d4d4d;
 			border-radius: 0px;
-			padding: 5px;
-			width: 100%;
+			padding: 5px 0 0 0;
+			height: 40px;
+			width: 300px;
+			margin: auto;
 			cursor: pointer;
 		}
 
 		@media (min-width: 768px) {
 			margin: auto;
 			max-width: 1000px;
+
+			& .submit {
+				width: 500px;
+			}
 		}
 	`;
 
@@ -134,11 +144,9 @@ const ContactForm = (props) => {
 					<label>Meddelande</label>
 					<textarea type="text" name="text" />
 
-					<input
-						type="submit"
-						class="submit"
-						value="SKICKA FÖRFRÅGAN"
-					></input>
+					<div className="submit">
+						<input type="submit" value="SKICKA FÖRFRÅGAN"></input>
+					</div>
 
 					{status && <p className="status">{status}</p>}
 				</form>
