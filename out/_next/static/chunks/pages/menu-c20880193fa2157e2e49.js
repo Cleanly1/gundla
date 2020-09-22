@@ -1,0 +1,1 @@
+_N_E=(window.webpackJsonp_N_E=window.webpackJsonp_N_E||[]).push([[12],{LtPk:function(n,t,e){"use strict";e.r(t);var u=e("q1tI"),_=e.n(u),i=e("CafY"),o=_.a.createElement;t.default=function(){return o(i.a,{title:"Meny"},o("div",null))}},xjIO:function(n,t,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/menu",function(){return e("LtPk")}])}},[["xjIO",0,2,1,3]]]);
