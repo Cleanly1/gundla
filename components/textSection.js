@@ -201,7 +201,6 @@ const StyledSection = styled.section`
 `;
 
 function TextSection(props) {
-	console.log(props);
 	const imageInfo = props.image;
 	return (
 		<StyledSection bgColor={props.bgColor} bgImg={props.imgBG}>

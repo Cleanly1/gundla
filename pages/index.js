@@ -7,7 +7,6 @@ import About from "../components/textSection";
 import Event from "../components/home-page/events";
 
 function Index(props) {
-	console.log(props);
 	React.useEffect(() => {
 		document.querySelector(".richText").innerHTML = props.posts.heroText;
 		document.querySelector(".textContent").innerHTML = props.posts.aboutUs;
