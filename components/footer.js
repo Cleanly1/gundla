@@ -11,6 +11,7 @@ const StyledFooter = styled.footer`
 	color: white;
 	padding: 40px 16px 32px 16px;
 	min-height: 40vh;
+	overflow: hidden;
 
 	& .copyMobile {
 		margin: 40px 0 0 0;
@@ -110,7 +111,8 @@ const InfoDiv = styled.div`
 	justify-content: center;
 	align-items: flex-start;
 	margin-top: 40px;
-	width: 100%;
+	padding-right: 10vw;
+	width: calc(100vw - 10vw - 144px);
 	z-index: 5;
 
 	& div {

@@ -1,6 +1,7 @@
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import ContactForm from "../components/contactForm";
 import ContactInfo from "../components/contactInfo";
+
 
 import { fetchEntriesByID, richTextToHtml } from "../utils/contentfulPosts";
 
