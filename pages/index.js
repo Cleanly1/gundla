@@ -12,7 +12,6 @@ import PreviewEvents from "../components/home-page/Events";
 import DisplayImages from "../components/DisplayImages";
 
 function Index(props) {
-	console.log(props);
 	React.useEffect(() => {
 		document.querySelector(".richText").innerHTML = props.posts.heroText;
 		document.querySelector(".textContent").innerHTML = props.posts.aboutUs;

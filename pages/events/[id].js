@@ -6,7 +6,6 @@ import {
 } from "../../utils/contentfulPosts";
 
 function Event(props) {
-	console.log(props);
 	return (
 		<Layout title={props.name} openHours={props.hours.openHours}>
 			<div>

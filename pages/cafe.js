@@ -1,8 +1,9 @@
 import Layout from "../components/layout";
+import { fetchEntriesByID, richTextToHtml } from "../utils/contentfulPosts";
 
-function Cafe() {
+function Cafe(props) {
 	return (
-		<Layout title="Café">
+		<Layout title="Café" openHours={props.hours.openHours}>
 			<div></div>
 		</Layout>
 	);
