@@ -1,4 +1,4 @@
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 import { fetchEntriesByID, richTextToHtml } from "../utils/contentfulPosts";
 
 import TextSection from "../components/TextSection";

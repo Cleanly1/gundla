@@ -3,7 +3,7 @@ import {
 	richTextToHtml,
 	fetchPreviewEvents,
 } from "../utils/contentfulPosts";
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 import Hero from "../components/Hero";
 import Cta from "../components/CTAbutton";
 import Info from "../components/home-page/HomeInfo";
