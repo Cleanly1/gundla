@@ -154,7 +154,7 @@ function MobileNav() {
 				<Link href="/">
 					<a className="links">Hem</a>
 				</Link>
-				<Link href="menu">
+				<Link href="cafe">
 					<a className="links">Café</a>
 				</Link>
 				<Link href="about">

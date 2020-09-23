@@ -106,7 +106,7 @@ function Navigation() {
 				<Link href="/">
 					<a>Startsida</a>
 				</Link>
-				<Link href="menu">
+				<Link href="cafe">
 					<a>Café</a>
 				</Link>
 				<Link href="about">
