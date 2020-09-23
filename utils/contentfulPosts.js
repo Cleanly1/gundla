@@ -41,5 +41,9 @@ export function richTextToHtml(text) {
 	return documentToHtmlString(text);
 }
 
-export default { fetchEntries, fetchEntriesByID, fetchEntry, richTextToHtml,fetchPreviewEvents };
-
+export default {
+	fetchEntriesByID,
+	fetchEntry,
+	richTextToHtml,
+	fetchPreviewEvents,
+};
