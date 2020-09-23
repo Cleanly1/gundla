@@ -66,9 +66,9 @@ const ContactForm = (props) => {
 			border: none;
 			border-radius: 2px;
 			outline: none;
-			width: 100%;
+			width: calc(100% - 10px);
 			margin: 0 0 10px 0;
-			padding: 0 -5px 0 5px;
+			padding: 5px;
 			color: #4d4d4d;
 		}
 
@@ -80,9 +80,9 @@ const ContactForm = (props) => {
 			border: none;
 			border-radius: 2px;
 			outline: none;
-			width: 100%;
+			width: calc(100% - 10px);
 			margin: 0 0 10px 0;
-			padding: 5px -5px 0 5px;
+			padding: 5px;
 			color: #4d4d4d;
 			resize: none;
 		}
@@ -140,7 +140,7 @@ const ContactForm = (props) => {
 					<input type="title" name="title" />
 
 					<label>Önskat datum</label>
-					<input type="title" name="title" />
+					<input type="date" name="date" />
 
 					<label>Meddelande</label>
 					<textarea type="text" name="text" />
