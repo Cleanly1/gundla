@@ -92,7 +92,7 @@ export async function getStaticProps() {
 	const event = await fetchEntriesByID("6sO9wSIadxSWFhbL9tXjlp");
 	const events = await fetchEntry("events");
 	const hours = await fetchEntriesByID("Mj8bQjVAwHv8m3rWjPGrC");
-	// events.text = richTextToHtml(events.text);
+
 	event.text = richTextToHtml(event.text);
 	hours.openHours = richTextToHtml(hours.openHours);
 

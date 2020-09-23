@@ -68,6 +68,8 @@ const ContactForm = (props) => {
 			outline: none;
 			width: 100%;
 			margin: 0 0 10px 0;
+			padding: 0 -5px 0 5px;
+			color: #4d4d4d;
 		}
 
 		& textarea {
@@ -80,6 +82,8 @@ const ContactForm = (props) => {
 			outline: none;
 			width: 100%;
 			margin: 0 0 10px 0;
+			padding: 5px -5px 0 5px;
+			color: #4d4d4d;
 			resize: none;
 		}
 
