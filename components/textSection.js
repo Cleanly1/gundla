@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Cta from "./CTAbutton";
 
 const StyledSection = styled.section`
 	display: flex;
@@ -217,7 +216,7 @@ function TextSection(props) {
 							<source
 								media="(min-width: 768px)"
 								srcSet={
-									"https:" + imageInfo.file.url + "?w=700"
+									"https:" + imageInfo.file.url + "?w=600"
 								}
 							/>
 							<img

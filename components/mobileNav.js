@@ -1,6 +1,6 @@
 import Link from "next/link";
+import MenuButton from "./HamburgerMenuButton";
 import styled from "styled-components";
-import MenuButton from "./HamburgerMenu";
 
 const NavMobile = styled.nav`
 	display: none;

@@ -70,6 +70,15 @@ const Nav = styled.nav`
 `;
 
 function Navigation() {
+	function handleNavigation(location) {
+		const desktopLinks = document.querySelectorAll(".navbar a");
+		desktopLinks.forEach((link) => {
+			if (link.pathname === location.pathname) {
+				link.classList.add("active");
+			}
+		});
+	}
+
 	function handleScroll(e) {
 		const navbar = document.querySelector(".navbar");
 		const navPos = navbar.getBoundingClientRect();
@@ -80,14 +89,6 @@ function Navigation() {
 		if (scrollY <= 142) {
 			navbar.classList.remove("scrolled");
 		}
-	}
-	function handleNavigation(location) {
-		const desktopLinks = document.querySelectorAll(".navbar a");
-		desktopLinks.forEach((link) => {
-			if (link.pathname === location.pathname) {
-				link.classList.add("active");
-			}
-		});
 	}
 
 	React.useEffect(() => {

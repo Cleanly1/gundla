@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Navigation from "./Navigation";
 import MobileNav from "./MobileNav";
-import Footer from "./Footer";
 import Popup from "./MobilePopup";
+import Footer from "./Footer";
 
 function Layout(props) {
 	return (

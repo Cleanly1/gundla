@@ -134,19 +134,6 @@ const PopupMobile = styled.nav`
 `;
 
 function Popup(props) {
-	function handleScroll(e) {
-		const nav = document.querySelector(PopupMobile);
-		const openHoursDiv = document.querySelector(".openHours");
-		if (scrollY === 0 && !nav.classList.contains("show")) {
-			nav.classList.add("show");
-		} else if (scrollY > 0 && nav.classList.contains("show")) {
-			nav.classList.remove("show");
-			openHoursDiv.classList.remove("showBox");
-			setTimeout(() => {
-				openHoursDiv.classList.remove("addElement");
-			}, 1000);
-		}
-	}
 	function handleOpenClick(e) {
 		const openHoursDiv = document.querySelector(".openHours");
 		openHoursDiv.classList.add("addElement");
@@ -162,6 +149,20 @@ function Popup(props) {
 		setTimeout(() => {
 			openHoursDiv.classList.remove("addElement");
 		}, 1000);
+	}
+
+	function handleScroll(e) {
+		const nav = document.querySelector(PopupMobile);
+		const openHoursDiv = document.querySelector(".openHours");
+		if (scrollY === 0 && !nav.classList.contains("show")) {
+			nav.classList.add("show");
+		} else if (scrollY > 0 && nav.classList.contains("show")) {
+			nav.classList.remove("show");
+			openHoursDiv.classList.remove("showBox");
+			setTimeout(() => {
+				openHoursDiv.classList.remove("addElement");
+			}, 1000);
+		}
 	}
 
 	React.useEffect(() => {
