@@ -13,7 +13,9 @@ function Layout(props) {
 
 			<Navigation />
 			<MobileNav />
-			<div className="content">{props.children}</div>
+			<div className="content" style={{ zIndex: 1 }}>
+				{props.children}
+			</div>
 			<Popup openHours={props.openHours} />
 			<Footer openHours={props.openHours} />
 			<style jsx global>{`
@@ -31,6 +33,7 @@ function Layout(props) {
 				.content {
 					padding: 10px 0;
 					padding-top: 13.5vh;
+					color: #4d4d4d;
 				}
 
 				@media (min-width: 768px) {
