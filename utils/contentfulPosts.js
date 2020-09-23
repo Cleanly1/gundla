@@ -5,8 +5,20 @@ const client = require("contentful").createClient({
 	accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-export async function fetchEntries() {
-	const entries = await client.getEntries();
+export async function fetchEntriesByType(type) {
+	const entries = await client.getEntries({
+		content_type: type,
+	});
+
+	return entries.items;
+}
+
+export async function fetchPreviewEvents() {
+	const entries = await client.getEntries({
+		content_type: "events",
+		order: "sys.createdAt",
+		include: 3,
+	});
 
 	return entries.items;
 }
@@ -23,4 +35,9 @@ export function richTextToHtml(text) {
 	return documentToHtmlString(text);
 }
 
-export default { fetchEntries, fetchEntriesByID, richTextToHtml };
+export default {
+	fetchEntriesByType,
+	fetchEntriesByID,
+	richTextToHtml,
+	fetchPreviewEvents,
+};

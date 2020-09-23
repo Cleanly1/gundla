@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
-import MenuButton from "./menuButton";
+import MenuButton from "./HamburgerMenu";
 
 const NavMobile = styled.nav`
 	display: none;
@@ -24,7 +24,7 @@ const NavMobile = styled.nav`
 	& .imageDiv {
 		height: 10vh;
 		& img {
-			height: 70px;
+			height: 100%;
 		}
 	}
 
@@ -45,9 +45,9 @@ const LinkDiv = styled.div`
 	align-items: center;
 	background-color: white;
 	top: 0px;
-	padding: 144px 16px 72px 16px;
+	padding: 96px 16px 72px 16px;
 	left: 100%;
-	height: 100vh;
+	height: calc(100vh - 168px);
 	width: calc(100vw - 32px);
 	transition-duration: 1s;
 	z-index: 9;
@@ -68,7 +68,7 @@ const LinkDiv = styled.div`
 		text-decoration: none;
 		color: var(--darkBrown);
 		max-width: 50vw;
-		margin: 24px 0;
+		margin: 12px 0;
 		transition-duration: 0.8s;
 
 		&:last-child {
