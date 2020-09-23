@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const ContactForm = (props) => {
-	// console.log(props.contactText);
 	const [status, setStatus] = useState(null);
 
 	const submitForm = (event) => {
@@ -34,7 +33,6 @@ const ContactForm = (props) => {
 		}
 
 		@media (min-width: 768px) {
-			/* padding: 0 10px 0 10px; */
 			max-width: 1000px;
 			margin: auto;
 
@@ -47,7 +45,6 @@ const ContactForm = (props) => {
 
 	const StyledForm = styled.div`
 		background: ${props.bgColor || "#BBCEB6"};
-		/* width: 100%; */
 		margin: 0 20px 0 20px;
 		padding: 10px;
 		border-radius: 2px;

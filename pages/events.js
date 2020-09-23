@@ -7,9 +7,6 @@ import {
 import styled from "styled-components";
 
 function Events(props) {
-	// console.log(props.events[0].fields.image.fields.title);
-	// console.log(props.event);
-
 	React.useEffect(() => {
 		document.querySelector(".event").innerHTML = props.event.text;
 	});
@@ -59,7 +56,6 @@ function Events(props) {
 		}
 
 		@media (min-width: 768px) {
-			/* padding: 0 10px 0 10px; */
 			max-width: 1000px;
 			margin: auto;
 		}

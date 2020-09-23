@@ -21,7 +21,6 @@ const ContactInfo = (props) => {
 		}
 
 		@media (min-width: 768px) {
-			/* padding: 0 10px 0 10px; */
 			max-width: 1000px;
 			margin: 100px auto 0 auto;
 		}
