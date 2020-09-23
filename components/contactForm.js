@@ -50,6 +50,7 @@ const ContactForm = (props) => {
 		/* width: 100%; */
 		margin: 0 20px 0 20px;
 		padding: 10px;
+		border-radius: 2px;
 
 		& h2 {
 			padding: 0 0 10px 0;

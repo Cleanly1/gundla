@@ -1,5 +1,9 @@
 import Layout from "../components/layout";
-import { fetchEntriesByID, richTextToHtml } from "../utils/contentfulPosts";
+import {
+	fetchEntriesByID,
+	fetchEntry,
+	richTextToHtml,
+} from "../utils/contentfulPosts";
 import styled from "styled-components";
 
 function Events(props) {
@@ -62,7 +66,7 @@ function Events(props) {
 	`;
 
 	return (
-		<Layout title="Events">
+		<Layout title="Events" openHours={props.hours.openHours}>
 			<StyledBanner>
 				<h2>{props.event.info}</h2>
 			</StyledBanner>
@@ -90,15 +94,17 @@ export default Events;
 
 export async function getStaticProps() {
 	const event = await fetchEntriesByID("6sO9wSIadxSWFhbL9tXjlp");
-	event.text = richTextToHtml(event.text);
-
 	const events = await fetchEntry("events");
+	const hours = await fetchEntriesByID("Mj8bQjVAwHv8m3rWjPGrC");
 	// events.text = richTextToHtml(events.text);
+	event.text = richTextToHtml(event.text);
+	hours.openHours = richTextToHtml(hours.openHours);
 
 	return {
 		props: {
 			event,
 			events,
+			hours,
 		},
 	};
 }

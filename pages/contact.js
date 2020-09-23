@@ -14,7 +14,7 @@ function Contact(props) {
 	// });
 
 	return (
-		<Layout title="Kontakt">
+		<Layout title="Kontakt" openHours={props.hours.openHours}>
 			<ContactInfo
 				title={props.info.title}
 				text={props.info.text}
@@ -35,14 +35,17 @@ export default Contact;
 export async function getStaticProps() {
 	const form = await fetchEntriesByID("5SYBcwk5y35Uy25UlOJGrg");
 	const info = await fetchEntriesByID("3emPt8YihNO09AU8YhlKiZ");
+	const hours = await fetchEntriesByID("Mj8bQjVAwHv8m3rWjPGrC");
 	// console.log(form);
 	form.text = richTextToHtml(form.text);
 	info.text = richTextToHtml(info.text);
+	hours.openHours = richTextToHtml(hours.openHours);
 
 	return {
 		props: {
 			form,
 			info,
+			hours,
 		},
 	};
 }

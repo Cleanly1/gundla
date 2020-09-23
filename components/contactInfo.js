@@ -7,6 +7,7 @@ const ContactInfo = (props) => {
 		margin: 0 20px 0 20px;
 		padding: 10px;
 		border: 3px solid #eec996;
+		border-radius: 2px;
 
 		& h1 {
 			padding: 0 0 10px 0;
