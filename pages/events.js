@@ -1,51 +1,89 @@
 import Layout from "../components/layout";
-import {
-	fetchEntriesByID,
-	richTextToHtml,
-	fetchEntry,
-} from "../utils/contentfulPosts";
+import { fetchEntriesByID, richTextToHtml } from "../utils/contentfulPosts";
 import styled from "styled-components";
 
 function Events(props) {
-	console.log(props.events[0].fields);
+	console.log(props.events[0].fields.image.fields.title);
 	// console.log(props.event);
 
 	React.useEffect(() => {
-		document.querySelector(".richText").innerHTML = props.event.text;
+		document.querySelector(".event").innerHTML = props.event.text;
 	});
+
+	const StyledBanner = styled.div`
+		background: #dd932d;
+		padding: 10px;
+		text-align: center;
+
+		@media (min-width: 768px) {
+			margin: 10px 0 0 0;
+		}
+	`;
+
+	const StyledEvents = styled.div`
+		margin: 20px 10px 10px 10px;
+		background: #f9f4ed;
+		padding: 10px;
+		text-align: center;
+
+		& h1 {
+			padding: 10px;
+		}
+
+		& p {
+			padding: 10px;
+		}
+	`;
+
+	const StyledEvent = styled.div`
+		padding: 20px;
+
+		& h2 {
+			color: #dd932d;
+			padding: 10px 0 0 0;
+		}
+
+		& img {
+			width: 100%;
+			border-top: 2px solid #f9f4ed;
+			padding: 20px 0 0 0;
+		}
+
+		& .bold {
+			padding: 10px 0;
+			font-weight: bold;
+		}
+
+		@media (min-width: 768px) {
+			/* padding: 0 10px 0 10px; */
+			max-width: 1000px;
+			margin: auto;
+		}
+	`;
 
 	return (
 		<Layout title="Events">
-			<div>{props.event.info}</div>
-			<h1>{props.event.title}</h1>
-			<div className="richText"></div>
+			<StyledBanner>
+				<h2>{props.event.info}</h2>
+			</StyledBanner>
+			<StyledEvents>
+				<h1>{props.event.title}</h1>
+				<div className="event"></div>
+			</StyledEvents>
 			{props.events.map((event) => (
-				<div>
-					<h2>{event.fields.title}</h2>
+				<StyledEvent>
 					<img
 						src={`https:${event.fields.image.fields.file.url}`}
-						alt=""
+						alt={event.fields.image.fields.title}
 					/>
-					<p>{event.fields.date}</p>
+					<h2>{event.fields.title}</h2>
+					<p className="bold">{event.fields.date}</p>
 					<p>{event.fields.description}</p>
-					<p>{event.fields.ticket}</p>
-				</div>
+					<p className="bold">{event.fields.ticket}</p>
+				</StyledEvent>
 			))}
 		</Layout>
 	);
-}
-
-{
-	/* <div>
-				<h2>{props.events[0].fields.title}</h2>
-				<img
-					src={`https:${props.events[0].fields.image.fields.file.url}`}
-					alt=""
-				/>
-				<p>{props.events[0].fields.date}</p>
-				<p>{props.events[0].fields.description}</p>
-				<p>{props.events[0].fields.ticket}</p>
-			</div> */
 }
 
 export default Events;
