@@ -106,7 +106,6 @@ const ContactForm = (props) => {
 		@media (min-width: 768px) {
 			margin: auto;
 			max-width: 1000px;
-
 			& .submit {
 				width: 500px;
 			}

@@ -7,7 +7,7 @@ import {
 import styled from "styled-components";
 
 function Events(props) {
-	console.log(props.events[0].fields.image.fields.title);
+	// console.log(props.events[0].fields.image.fields.title);
 	// console.log(props.event);
 
 	React.useEffect(() => {

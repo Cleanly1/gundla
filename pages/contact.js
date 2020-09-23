@@ -6,8 +6,8 @@ import { fetchEntriesByID, richTextToHtml } from "../utils/contentfulPosts";
 
 function Contact(props) {
 	// console.log(props.posts.image.fields.file.url);
-	console.log(props.form.text);
-	console.log(props.info.text);
+	// console.log(props.form.text);
+	// console.log(props.info.text);
 
 	// React.useEffect(() => {
 	// 	document.querySelector(".richText").innerHTML = props.posts.text;
