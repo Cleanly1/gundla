@@ -23,6 +23,12 @@ export async function fetchPreviewEvents() {
 	return entries.items;
 }
 
+export async function fetchEntry(name) {
+	const entries = await client.getEntries({ content_type: name });
+
+	return entries.items;
+}
+
 export async function fetchEntriesByID(ID) {
 	const entries = await client.getEntry(ID).then((entry) => {
 		return entry.fields;
@@ -35,9 +41,5 @@ export function richTextToHtml(text) {
 	return documentToHtmlString(text);
 }
 
-export default {
-	fetchEntriesByType,
-	fetchEntriesByID,
-	richTextToHtml,
-	fetchPreviewEvents,
-};
+export default { fetchEntries, fetchEntriesByID, fetchEntry, richTextToHtml,fetchPreviewEvents };
+

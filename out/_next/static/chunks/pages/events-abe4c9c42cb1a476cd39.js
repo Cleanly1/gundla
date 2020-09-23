@@ -1,0 +1,1 @@
+_N_E=(window.webpackJsonp_N_E=window.webpackJsonp_N_E||[]).push([[9],{UGbB:function(n,t,e){"use strict";e.r(t);var _=e("q1tI"),i=e.n(_),u=e("CafY"),o=i.a.createElement;t.default=function(){return o(u.a,{title:"Events"},o("div",null))}},f8ys:function(n,t,e){(window.__NEXT_P=window.__NEXT_P||[]).push(["/events",function(){return e("UGbB")}])}},[["f8ys",0,2,1,3]]]);

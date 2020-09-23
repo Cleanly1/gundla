@@ -1,33 +1,33 @@
 {
-  "name": "gundla",
-  "version": "1.0.0",
-  "description": "Site for Gundla Cafe",
-  "main": "index.js",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/deinnielle/gundla.git"
-  },
-  "author": "deinnielle Cleanly1",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/deinnielle/gundla/issues"
-  },
-  "homepage": "https://github.com/deinnielle/gundla#readme",
-  "dependencies": {
-    "@contentful/rich-text-html-renderer": "^14.1.1",
-    "contentful": "^7.14.6",
-    "dotenv": "^8.2.0",
-    "next": "^9.5.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "styled-components": "^5.2.0"
-  },
-  "devDependencies": {
-    "babel-plugin-styled-components": "^1.11.1"
-  }
+	"name": "gundla",
+	"version": "1.0.0",
+	"description": "Site for Gundla Cafe",
+	"main": "index.js",
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build && next export",
+		"start": "next start"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/deinnielle/gundla.git"
+	},
+	"author": "deinnielle Cleanly1",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/deinnielle/gundla/issues"
+	},
+	"homepage": "https://github.com/deinnielle/gundla#readme",
+	"dependencies": {
+		"@contentful/rich-text-html-renderer": "^14.1.1",
+		"contentful": "^7.14.6",
+		"dotenv": "^8.2.0",
+		"next": "^9.5.2",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"styled-components": "^5.2.0"
+	},
+	"devDependencies": {
+		"babel-plugin-styled-components": "^1.11.1"
+	}
 }
