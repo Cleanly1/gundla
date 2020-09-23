@@ -140,7 +140,7 @@ const ContactForm = (props) => {
 					<input type="title" name="title" />
 
 					<label>Önskat datum</label>
-					<input type="date" name="date" />
+					<input type="title" name="date" />
 
 					<label>Meddelande</label>
 					<textarea type="text" name="text" />
