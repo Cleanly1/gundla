@@ -175,8 +175,7 @@ const StyledSection = styled.section`
 `;
 
 function SocialSection(props) {
-	console.log(props.images);
-	const images = [props.images.firstImage, props.images.secondImage];
+	const images = props.images;
 	return (
 		<StyledSection>
 			<div className="socialText">{props.children}</div>
