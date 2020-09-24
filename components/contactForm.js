@@ -53,11 +53,14 @@ const ContactForm = (props) => {
 		& .bold-form {
 			font-weight: bold;
 			padding: 40px 0 20px 0;
+			font-family: var(--fontCon);
 		}
 
 		& h2 {
 			padding: 10px 0 10px 0;
 			border-bottom: 2px solid var(--nearBlack);
+			font-family: var(--fontCon);
+			font-size: 28px;
 		}
 
 		& .contact-text p {
@@ -97,6 +100,7 @@ const ContactForm = (props) => {
 		& label {
 			display: block;
 			padding: 0 0 2px 0;
+			font-family: var(--fontCon);
 		}
 
 		& .submit {
@@ -105,16 +109,17 @@ const ContactForm = (props) => {
 			background: white;
 			border: 2px solid var(--nearBlack);
 			border-radius: 2px;
-			padding: 5px 0 0 0;
-			height: 40px;
+			padding: 10px 0 0 0;
+			height: 45px;
 			width: 300px;
 			margin: auto;
-
 			cursor: pointer;
 		}
 
 		& input[type="submit"] {
 			font-weight: bold;
+			font-size: 20px;
+			text-align: center;
 		}
 
 		@media (min-width: 768px) {

@@ -37,15 +37,22 @@ function Events(props) {
 			padding: 10px;
 			font-size: 28px;
 			letter-spacing: 0.08em;
+			font-family: var(--fontCon);
 		}
 
 		& p {
 			padding: 10px;
+			font-family: var(--fontCon);
+			line-height: 24px;
 		}
 	`;
 
 	const StyledEvent = styled.div`
 		padding: 20px 20px 0 20px;
+
+		& p {
+			line-height: 24px;
+		}
 
 		& h2 {
 			color: #dd932d;
@@ -56,13 +63,13 @@ function Events(props) {
 		& img {
 			width: 100%;
 			border-top: 2px solid var(--lightBeige);
-
 			padding: 20px 0 0 0;
 		}
 
 		& .bold {
 			padding: 20px 0;
 			font-weight: bold;
+			font-family: var(--fontCon);
 		}
 
 		@media (min-width: 768px) {

@@ -16,6 +16,7 @@ const ContactInfo = (props) => {
 			padding: 0 0 10px 0;
 			border-bottom: 2px solid var(--lightOrange);
 			font-size: 28px;
+			font-family: var(--fontCon);
 		}
 
 		& p {
@@ -26,6 +27,7 @@ const ContactInfo = (props) => {
 		& h2 {
 			padding: 20px 0 0 0;
 			font-size: 18px;
+			font-family: var(--fontCon);
 		}
 
 		@media (min-width: 768px) {
