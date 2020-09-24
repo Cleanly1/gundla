@@ -18,6 +18,10 @@ function Events(props) {
 		text-align: center;
 		letter-spacing: 0.08em;
 
+		& h2 {
+			font-size: 18px;
+		}
+
 		@media (min-width: 768px) {
 			margin: 10px 0 0 0;
 		}
@@ -28,10 +32,11 @@ function Events(props) {
 		background: var(--lightBeige);
 		padding: 10px;
 		text-align: center;
-		letter-spacing: 0.08em;
 
 		& h1 {
 			padding: 10px;
+			font-size: 28px;
+			letter-spacing: 0.08em;
 		}
 
 		& p {
@@ -41,11 +46,11 @@ function Events(props) {
 
 	const StyledEvent = styled.div`
 		padding: 20px 20px 0 20px;
-		letter-spacing: 0.08em;
 
 		& h2 {
 			color: #dd932d;
 			padding: 10px 0 0 0;
+			letter-spacing: 0.08em;
 		}
 
 		& img {
@@ -72,13 +77,11 @@ function Events(props) {
 		letter-spacing: 0.08em;
 
 		& .more-events {
-			font-size: 100%;
-			font-family: inherit;
 			background: var(--lightBeige);
 			border: 2px solid var(--nearBlack);
 			border-radius: 2px;
 			padding: 5px 0 0 0;
-			height: 40px;
+			height: 50px;
 			width: 300px;
 			margin: auto;
 			cursor: pointer;
@@ -88,7 +91,7 @@ function Events(props) {
 			text-align: center;
 			font-size: 20px;
 			font-weight: bold;
-			margin-top: 5px;
+			margin-top: 10px;
 		}
 	`;
 
