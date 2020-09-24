@@ -1,8 +1,16 @@
 import Layout from "../components/layout";
 import ContactForm from "../components/contactForm";
 import ContactInfo from "../components/contactInfo";
+import styled from "styled-components";
 
 import { fetchEntriesByID, richTextToHtml } from "../utils/contentfulPosts";
+
+const StyledBackground = styled.div`
+	background-image: url("/images/ground.jpg");
+	background-size: contain;
+	background-color: rgba(255, 255, 255, 0.95);
+	background-blend-mode: lighten;
+`;
 
 function Contact(props) {
 	return (
@@ -12,12 +20,14 @@ function Contact(props) {
 				text={props.info.text}
 				image={props.info.heroImage.fields.file.url}
 			/>
-			<ContactForm
-				bgColor="#BBCEB6"
-				text={props.form.text}
-				title={props.form.title}
-				image={props.form.image.fields.file.url}
-			/>
+			<StyledBackground>
+				<ContactForm
+					bgColor="#BBCEB6"
+					text={props.form.text}
+					title={props.form.title}
+					image={props.form.image.fields.file.url}
+				/>
+			</StyledBackground>
 		</Layout>
 	);
 }
