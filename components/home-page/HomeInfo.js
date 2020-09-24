@@ -6,7 +6,7 @@ const InfoSection = styled.section`
 	width: calc(100vw - 32px);
 	padding: 16px 16px;
 	overflow: hidden;
-	background-image: url("/images/ground.jpg");
+	background-image: url("/ground.jpg");
 	background-size: contain;
 	background-color: rgba(255, 255, 255, 0.95);
 	background-blend-mode: lighten;

@@ -111,8 +111,7 @@ const InfoDiv = styled.div`
 	justify-content: center;
 	align-items: flex-start;
 	margin-top: 40px;
-	padding-right: 10vw;
-	width: calc(100vw - 10vw - 144px);
+	width: calc(100vw - 32px);
 	z-index: 5;
 
 	& div {
@@ -184,6 +183,8 @@ const InfoDiv = styled.div`
 		flex-flow: row nowrap;
 		justify-content: space-between;
 		margin-top: 40px;
+		padding-right: 10vw;
+		width: calc(100vw - 10vw - 144px);
 	}
 `;
 
