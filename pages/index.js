@@ -15,7 +15,6 @@ function Index(props) {
 	React.useEffect(() => {
 		document.querySelector(".richText").innerHTML = props.posts.heroText;
 		document.querySelector(".textContent").innerHTML = props.posts.aboutUs;
-		document.querySelector(".openHours").innerHTML = props.hours.openHours;
 	});
 
 	return (
@@ -29,7 +28,6 @@ function Index(props) {
 				<div className="richText"></div>
 				<h3 className="showOnDesktop">Välkomna till oss</h3>
 				<Cta text="Till Caféet" borderColor="#014335" link="/cafe" />
-				<div className="openHours"></div>
 			</Hero>
 
 			<Info />

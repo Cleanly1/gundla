@@ -6,9 +6,12 @@ import TextSection from "../components/TextSection";
 import Cta from "../components/CTAbutton";
 import Hero from "../components/Hero";
 import ContactForm from "../components/contactForm";
+import CustomerSection from "../components/cafe-page/CustomerSection";
+import DisplayImages from "../components/DisplayImages";
 
 const RestyledHero = styled(Hero)`
 	padding-bottom: 50vw;
+	margin-bottom: 0;
 	& .text {
 		padding-bottom: 0px;
 		margin-bottom: 0;
@@ -46,6 +49,8 @@ const RestyledHero = styled(Hero)`
 		top: 0;
 	}
 	@media (min-width: 1025px) {
+		padding-bottom: 0;
+		max-height: 105vh;
 		& .text {
 			margin-bottom: 0;
 			& .openHours {
@@ -53,8 +58,8 @@ const RestyledHero = styled(Hero)`
 				left: calc(-5vw - 2px);
 				top: 2vw;
 				background-color: var(--lightGreen);
-				width: calc(50vw - 16vw);
-				padding: 16px 11vw 20px 5vw;
+				width: 100%;
+				padding: 16px 11vw 16px 5vw;
 				margin-top: 32px;
 				font-family: var(--fontCon);
 				color: var(--nearBlack);
@@ -75,6 +80,27 @@ const RestyledHero = styled(Hero)`
 					text-decoration-line: underline;
 					text-transform: uppercase;
 					margin-bottom: 12px;
+				}
+			}
+		}
+	}
+`;
+
+const RestyledImages = styled(DisplayImages)`
+	.images {
+		& div {
+			& img {
+				height: 100%;
+			}
+		}
+	}
+
+	@media (min-width: 1025px) {
+		.images {
+			& div {
+				& img {
+					height: 37vw;
+					width: auto;
 				}
 			}
 		}
@@ -103,6 +129,7 @@ function Cafe(props) {
 				<h4 className="hideOnDesktop">Hjärtligt Välkomna!</h4>
 				<div className="openHours"></div>
 			</RestyledHero>
+			<CustomerSection />
 			<ContactForm
 				bgColor="#EEC996"
 				lineColor="#4D4D4D"
@@ -112,6 +139,7 @@ function Cafe(props) {
 			>
 				<div className="contact-text"></div>
 			</ContactForm>
+			<RestyledImages images={props.displayImages} />
 		</Layout>
 	);
 }
@@ -121,6 +149,7 @@ export default Cafe;
 export async function getStaticProps() {
 	const posts = await fetchEntriesByID("4W7m9oltpX46OjXXZlz9wV");
 	const hours = await fetchEntriesByID("Mj8bQjVAwHv8m3rWjPGrC");
+	const displayImages = await fetchEntriesByID("5v6NInsFH7nMjvdGk6Px86");
 	hours.openHours = richTextToHtml(hours.openHours);
 	posts.heroText = richTextToHtml(posts.heroText);
 	posts.cateringText = richTextToHtml(posts.cateringText);
@@ -129,6 +158,7 @@ export async function getStaticProps() {
 		props: {
 			hours,
 			posts,
+			displayImages,
 		},
 	};
 }
