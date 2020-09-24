@@ -8,7 +8,7 @@ const ContactInfo = (props) => {
 		border-radius: 2px;
 
 		& .info-text {
-			padding: 20px 0 0 0;
+			padding: 0px 0 0 0;
 		}
 
 		& h1 {
@@ -37,15 +37,11 @@ const ContactInfo = (props) => {
 		}
 	`;
 
-	React.useEffect(() => {
-		document.querySelector(".info-text").innerHTML = props.text;
-	});
-
 	return (
 		<div>
 			<StyledDiv>
 				<h1>{props.title}</h1>
-				<div className="info-text"></div>
+				{props.children}
 			</StyledDiv>
 		</div>
 	);

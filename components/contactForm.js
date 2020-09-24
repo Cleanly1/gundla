@@ -133,10 +133,6 @@ const ContactForm = (props) => {
 		}
 	`;
 
-	React.useEffect(() => {
-		document.querySelector(".contact-text").innerHTML = props.text;
-	});
-
 	return (
 		<div>
 			<StyledImg>
@@ -144,13 +140,13 @@ const ContactForm = (props) => {
 			</StyledImg>
 			<StyledForm>
 				<h2>{props.title}</h2>
-				<div className="contact-text"></div>
+				{props.children}
 				<form
 					onSubmit={submitForm}
 					action="https://formspree.io/xeqpjklr"
 					method="POST"
 				>
-					<p className="bold-form">FÖRFRÅGAN</p>
+					<p className="bold-form">{props.formTitle}</p>
 
 					<label>Namn</label>
 					<input type="name" name="name" />

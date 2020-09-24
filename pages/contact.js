@@ -29,9 +29,16 @@ const StyledImg = styled.div`
 `;
 
 function Contact(props) {
+	React.useEffect(() => {
+		document.querySelector(".contact-text").innerHTML = props.form.text;
+		document.querySelector(".info-text").innerHTML = props.info.text;
+	});
+
 	return (
 		<Layout title="Kontakt" openHours={props.hours.openHours}>
-			<ContactInfo title={props.info.title} text={props.info.text} />
+			<ContactInfo title={props.info.title}>
+				<div className="info-text"></div>
+			</ContactInfo>
 			<StyledBackground>
 				<StyledImg>
 					<img
@@ -42,10 +49,12 @@ function Contact(props) {
 				<ContactForm
 					bgColor="#BBCEB6"
 					lineColor="#4D4D4D"
-					text={props.form.text}
+					formTitle="FÖRFRÅGAN"
 					title={props.form.title}
 					image={props.form.image.fields.file.url}
-				/>
+				>
+					<div className="contact-text"></div>
+				</ContactForm>
 			</StyledBackground>
 		</Layout>
 	);

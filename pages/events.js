@@ -30,18 +30,19 @@ function Events(props) {
 	const StyledEvents = styled.div`
 		margin: 20px 10px 10px 10px;
 		background: var(--lightBeige);
-		padding: 10px;
-		text-align: center;
+		padding: 20px;
+		/* text-align: center; */
 
 		& h1 {
-			padding: 10px;
 			font-size: 28px;
 			letter-spacing: 0.08em;
 			font-family: var(--fontCon);
+			border-bottom: 2px solid var(--lightBrown);
+			padding: 0 0 20px 0;
 		}
 
 		& p {
-			padding: 10px;
+			padding: 20px 0 10px 0;
 			font-family: var(--fontCon);
 			line-height: 24px;
 		}
