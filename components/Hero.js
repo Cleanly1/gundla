@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const HeroContainer = styled.div`
+	position: relative;
 	display: flex;
 	flex-flow: column nowrap;
 	width: calc(100vw - 32px);
@@ -8,17 +9,32 @@ const HeroContainer = styled.div`
 	padding: 0 16px;
 	margin-bottom: 42px;
 
+	& .background {
+		position: absolute;
+		top: 0;
+		left: 0px;
+		width: 100vw;
+		height: 105%;
+		background-image: url("/ground.jpg");
+		background-size: contain;
+		background-color: rgba(255, 255, 255, 0.95);
+		background-blend-mode: lighten;
+		z-index: 0;
+	}
+
 	& .text {
 		display: flex;
 		flex-flow: column nowrap;
 		justify-content: center;
 		align-items: flex-start;
 		padding: 32px 50px;
-		padding-bottom: 30vh;
+		padding-bottom: 10vh;
+		margin-bottom: 20vh;
 		background: ${(props) => props.bgColor || "#faf5ef"};
 		border: ${(props) => props.border || "none"};
 		border-radius: 2px;
 		color: var(--nearBlack);
+		z-index: 4;
 
 		& h1 {
 			font-family: var(--fontCon);
@@ -57,6 +73,7 @@ const HeroContainer = styled.div`
 		position: relative;
 		top: -25vh;
 		height: 40vw;
+
 		& .logo {
 			position: relative;
 			display: flex;
@@ -66,6 +83,7 @@ const HeroContainer = styled.div`
 			bottom: 59vh;
 			height: 30vw;
 			width: 30vw;
+			z-index: 5;
 			& img {
 				width: 100%;
 			}
@@ -80,6 +98,7 @@ const HeroContainer = styled.div`
 			height: 80vw;
 			width: 80vw;
 			border-radius: 2px;
+			z-index: 5;
 			& img {
 				width: 100%;
 			}
@@ -96,6 +115,7 @@ const HeroContainer = styled.div`
 			height: 50vw;
 			width: 80vw;
 			border-radius: 2px;
+			z-index: 5;
 			& img {
 				width: 100%;
 			}
@@ -107,7 +127,16 @@ const HeroContainer = styled.div`
 		font-family: var(--fontCon);
 		font-size: 24px;
 		line-height: 28px;
+		font-weight: normal;
 		color: var(--nearBlack);
+	}
+	& .hideOnDesktop {
+		font-family: var(--fontCon);
+		font-size: 20px;
+		line-height: 23px;
+		font-weight: normal;
+		color: var(--nearBlack);
+		margin: 0;
 	}
 
 	@media (min-width: 1025px) {
@@ -117,10 +146,15 @@ const HeroContainer = styled.div`
 		width: calc(100vw - 96px);
 		max-height: 95vh;
 
+		& .background {
+			display: none;
+		}
+
 		& .text {
-			width: 40vw;
+			width: calc(50vw - 16vw);
 			height: auto;
 			padding: 6vw 11vw 5vw 5vw;
+			margin: 0;
 			justify-content: flex-start;
 			align-items: flex-start;
 
@@ -147,6 +181,9 @@ const HeroContainer = styled.div`
 					display: initial;
 					margin-top: 0;
 				}
+				& .hideOnDesktop {
+					display: none;
+				}
 			}
 
 			& p {
@@ -154,6 +191,7 @@ const HeroContainer = styled.div`
 				line-height: 28px;
 				color: var(--nearBlack);
 				margin-bottom: 28px;
+				width: 100%;
 
 				:last-child {
 					margin-bottom: 0;
@@ -165,17 +203,21 @@ const HeroContainer = styled.div`
 		}
 
 		& .images {
-			position: static;
-			width: 45vw;
-			height: 10px;
+			position: relative;
+			width: 33vw;
+			height: 95vh;
+			top: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			& .logo {
-				position: relative;
+				position: absolute;
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				overflow: hidden;
-				bottom: 84vh;
-				right: 8vw;
+				top: 34%;
+				left: -30%;
 				height: 15vw;
 				width: 15vw;
 				& img {
@@ -183,15 +225,15 @@ const HeroContainer = styled.div`
 				}
 			}
 			& .squareImg {
-				position: relative;
+				position: absolute;
 				top: 4vh;
-				left: -4vw;
+				left: -36px;
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				overflow: hidden;
-				height: 38vw;
-				width: 43vw;
+				height: 41vw;
+				width: 46vw;
 				& img {
 					position: relative;
 					top: 50px;
@@ -199,9 +241,9 @@ const HeroContainer = styled.div`
 			}
 
 			& .reqImg {
-				position: relative;
-				top: -10vw;
-				left: -9vw;
+				position: absolute;
+				top: 50%;
+				left: -30%;
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -262,6 +304,7 @@ function Hero(props) {
 					<img src="/Logo-beige.svg" alt="Gundla logo" />
 				</div>
 			</div>
+			<div className="background"></div>
 		</HeroContainer>
 	);
 }
