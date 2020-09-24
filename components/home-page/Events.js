@@ -129,7 +129,6 @@ const StyledSection = styled.section`
 `;
 
 function PreviewEvents(props) {
-	console.log(props);
 	React.useEffect(() => {
 		const eventInfoDiv = document.querySelector(".eventInfo");
 		eventInfoDiv.innerHTML = props.eventText.text;

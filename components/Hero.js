@@ -263,7 +263,6 @@ const HeroContainer = styled.div`
 function Hero(props) {
 	const imageOne = props.images.heroImageOne.fields;
 	const imageTwo = props.images.heroImageTwo.fields;
-	console.log(props);
 
 	return (
 		<HeroContainer

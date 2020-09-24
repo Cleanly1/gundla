@@ -85,7 +85,6 @@ const StyledSection = styled.section`
 `;
 
 function DisplayImages(props) {
-	console.log(props.images);
 	const images = [
 		props.images.firstImage,
 		props.images.secondImage,
