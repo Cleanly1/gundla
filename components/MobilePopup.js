@@ -27,7 +27,7 @@ const PopupMobile = styled.nav`
 			opacity: 0;
 			bottom: 11vh;
 			justify-content: center;
-			padding: 32px 20vw;
+			padding: 24px 20vw;
 			background-color: var(--lightOrange);
 			clip-path: polygon(
 				100% 0,

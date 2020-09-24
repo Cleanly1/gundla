@@ -68,7 +68,7 @@ const LinkDiv = styled.div`
 		text-decoration: none;
 		color: var(--darkBrown);
 		max-width: 50vw;
-		margin: 12px 0;
+		margin: 24px 0;
 		transition-duration: 0.8s;
 
 		&:last-child {
@@ -114,7 +114,7 @@ function MobileNav() {
 			button.classList.toggle("change");
 		});
 		setTimeout(() => {
-			logo.classList.toggle("showText");
+			// logo.classList.toggle("showText");
 			for (let i = 0; i < links.length; i++) {
 				links[i].classList.toggle("showText");
 			}
@@ -168,9 +168,6 @@ function MobileNav() {
 				<Link href="events">
 					<a className="links">Evenemang</a>
 				</Link>
-				<div className="imageDiv ">
-					<img src="/Logo.svg" />
-				</div>
 			</LinkDiv>
 		</NavMobile>
 	);
