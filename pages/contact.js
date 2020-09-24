@@ -6,21 +6,39 @@ import styled from "styled-components";
 import { fetchEntriesByID, richTextToHtml } from "../utils/contentfulPosts";
 
 const StyledBackground = styled.div`
-	background-image: url("/images/ground.jpg");
+	overflow: hidden;
+	background-image: url("/ground.jpg");
 	background-size: contain;
 	background-color: rgba(255, 255, 255, 0.95);
 	background-blend-mode: lighten;
+	margin: 0 0 -10px 0;
+`;
+
+const StyledImg = styled.div`
+	padding: 0 20px 30px 20px;
+	margin: 0 0 20px 20px;
+
+	& img {
+		width: 100%;
+	}
+
+	@media (min-width: 768px) {
+		max-width: 1000px;
+		margin: auto;
+	}
 `;
 
 function Contact(props) {
 	return (
 		<Layout title="Kontakt" openHours={props.hours.openHours}>
-			<ContactInfo
-				title={props.info.title}
-				text={props.info.text}
-				image={props.info.heroImage.fields.file.url}
-			/>
+			<ContactInfo title={props.info.title} text={props.info.text} />
 			<StyledBackground>
+				<StyledImg>
+					<img
+						src={`https:${props.info.heroImage.fields.file.url}`}
+						alt="Contact Image"
+					/>
+				</StyledImg>
 				<ContactForm
 					bgColor="#BBCEB6"
 					text={props.form.text}

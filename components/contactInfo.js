@@ -7,6 +7,7 @@ const ContactInfo = (props) => {
 		border: 2px solid var(--lightOrange);
 		border-radius: 2px;
 		letter-spacing: 0.08em;
+
 		& .info-text {
 			padding: 20px 0 0 0;
 		}
@@ -33,20 +34,6 @@ const ContactInfo = (props) => {
 		}
 	`;
 
-	const StyledImg = styled.div`
-		padding: 0 20px 30px 20px;
-		margin: 0 0 20px 20px;
-
-		& img {
-			width: 100%;
-		}
-
-		@media (min-width: 768px) {
-			max-width: 1000px;
-			margin: auto;
-		}
-	`;
-
 	React.useEffect(() => {
 		document.querySelector(".info-text").innerHTML = props.text;
 	});
@@ -57,9 +44,6 @@ const ContactInfo = (props) => {
 				<h1>{props.title}</h1>
 				<div className="info-text"></div>
 			</StyledDiv>
-			<StyledImg>
-				<img src={`https:${props.image}`} alt="Contact Image" />
-			</StyledImg>
 		</div>
 	);
 };
