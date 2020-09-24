@@ -5,7 +5,7 @@ const StyledSection = styled.section`
 	flex-flow: column nowrap;
 	width: calc(100vw - 32px);
 	padding: 0 16px;
-	background-image: url("/images/ground.jpg");
+	background-image: url("/ground.jpg");
 	background-size: contain;
 	background-color: rgba(255, 255, 255, 0.95);
 	background-blend-mode: lighten;
@@ -91,8 +91,14 @@ const StyledSection = styled.section`
 				padding-bottom: 0;
 				border-bottom: none;
 
-				&:last-child {
-					margin-bottom: 16px;
+				:last-child {
+					margin-bottom: 0;
+				}
+				:nth-last-child(2) {
+					margin-bottom: 0;
+				}
+				:nth-last-child(3) {
+					margin-bottom: 0;
 				}
 			}
 		}

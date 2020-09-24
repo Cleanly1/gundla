@@ -5,6 +5,7 @@ import TextSection from "../components/TextSection";
 import Cta from "../components/CTAbutton";
 import Hero from "../components/Hero";
 import FindUsSection from "../components/FindUsSection";
+import SocialSection from "../components/SocialSection";
 
 function About(props) {
 	const title = "OM OSS";
@@ -26,6 +27,16 @@ function About(props) {
 				<div className="richText"></div>
 				<h3 className="showOnDesktop">Välkomna till oss!</h3>
 			</Hero>
+
+			<SocialSection images={props.displayImages}>
+				<h1>SOCIALA MEDIER</h1>
+				<p>
+					Våra sociala medier är ett enkelt sätt för oss att
+					kommunicera och för er kunder att få aktuella uppdateringar
+					rakt i er telefon.
+				</p>
+			</SocialSection>
+
 			<TextSection
 				bgColor="#EEC996"
 				imgBG="#DD932D"
@@ -59,6 +70,7 @@ export default About;
 export async function getStaticProps() {
 	const posts = await fetchEntriesByID("7zT6WMFbJ7BMNTst6IwTy9");
 	const hours = await fetchEntriesByID("Mj8bQjVAwHv8m3rWjPGrC");
+	const displayImages = await fetchEntriesByID("1OnhRSfAyKpew577otK4bT");
 	hours.openHours = richTextToHtml(hours.openHours);
 	posts.heroText = richTextToHtml(posts.heroText);
 	posts.infoText = richTextToHtml(posts.infoText);
@@ -68,6 +80,7 @@ export async function getStaticProps() {
 		props: {
 			posts,
 			hours,
+			displayImages,
 		},
 	};
 }
