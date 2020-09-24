@@ -173,7 +173,6 @@ const InfoDiv = styled.div`
 			font-weight: 400;
 			font-size: 18px;
 			letter-spacing: 0.05em;
-			text-transform: uppercase;
 			margin: 0;
 			line-height: 31px;
 		}
