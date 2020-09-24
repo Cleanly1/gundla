@@ -17,13 +17,10 @@ function Events(props) {
 		padding: 10px;
 		text-align: center;
 		letter-spacing: 0.08em;
+		margin: 10px 0 0 0;
 
 		& h2 {
 			font-size: 18px;
-		}
-
-		@media (min-width: 768px) {
-			margin: 10px 0 0 0;
 		}
 	`;
 
@@ -31,7 +28,6 @@ function Events(props) {
 		margin: 20px 10px 10px 10px;
 		background: var(--lightBeige);
 		padding: 20px;
-		/* text-align: center; */
 
 		& h1 {
 			font-size: 28px;
@@ -90,15 +86,15 @@ function Events(props) {
 			border: 2px solid var(--nearBlack);
 			border-radius: 2px;
 			padding: 5px 0 0 0;
-			height: 50px;
-			width: 300px;
+			height: 45px;
+			width: 250px;
 			margin: auto;
 			cursor: pointer;
 		}
 
 		& .more-events p {
 			text-align: center;
-			font-size: 20px;
+			font-size: 16px;
 			font-weight: bold;
 			margin-top: 10px;
 			font-family: var(--fontCon);

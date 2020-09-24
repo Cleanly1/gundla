@@ -111,17 +111,20 @@ const ContactForm = (props) => {
 			border: 2px solid var(--nearBlack);
 			border-radius: 2px;
 			padding: 10px 0 0 0;
-			height: 45px;
-			width: 300px;
+			height: 40px;
+			width: 250px;
 			margin: auto;
 			cursor: pointer;
+			background: var(--lightBeige);
 		}
 
 		& input[type="submit"] {
 			font-weight: bold;
-			font-size: 20px;
+			font-size: 16px;
 			text-align: center;
 			font-family: var(--fontCon);
+			background: var(--lightBeige);
+			padding: 0 0 4px 16px;
 		}
 
 		@media (min-width: 768px) {

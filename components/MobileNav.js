@@ -147,7 +147,9 @@ function MobileNav() {
 	return (
 		<NavMobile>
 			<div className="imageDiv">
-				<img src="/Logo.svg" />
+				<Link href="/">
+					<img src="/Logo.svg" />
+				</Link>
 			</div>
 			<MenuButton handleClick={handleClick} />
 			<LinkDiv>
