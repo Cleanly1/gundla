@@ -9,8 +9,8 @@ const NavMobile = styled.nav`
 	justify-content: center;
 	align-items: center;
 	background-color: white;
-	width: 100vw;
-	height: 13vh;
+	width: calc(100vw - 48px);
+	padding: 16px 24px;
 	transition: box-shadow 1s ease;
 	z-index: 100;
 
@@ -22,7 +22,7 @@ const NavMobile = styled.nav`
 	}
 
 	& .imageDiv {
-		height: 10vh;
+		height: 64px;
 		& img {
 			height: 100%;
 		}

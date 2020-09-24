@@ -79,6 +79,7 @@ const StyledSection = styled.section`
 				line-height: 19px;
 				letter-spacing: 0.08em;
 				text-decoration-line: underline;
+				text-transform: uppercase;
 				color: var(--orange);
 			}
 		}

@@ -9,7 +9,6 @@ import SocialSection from "../components/SocialSection";
 
 function About(props) {
 	const title = "OM OSS";
-	console.log(props);
 	React.useEffect(() => {
 		document.querySelector(".richText").innerHTML = props.posts.heroText;
 		document.querySelector(".textContent").innerHTML = props.posts.infoText;
@@ -29,7 +28,12 @@ function About(props) {
 				<h4 className="hideOnDesktop">Hjärtligt Välkomna!</h4>
 			</Hero>
 
-			<SocialSection images={props.displayImages}>
+			<SocialSection
+				images={[
+					props.posts.instaBackground,
+					props.posts.faceBackground,
+				]}
+			>
 				<h1>SOCIALA MEDIER</h1>
 				<p>
 					Våra sociala medier är ett enkelt sätt för oss att
