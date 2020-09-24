@@ -103,7 +103,7 @@ const ContactForm = (props) => {
 			font-family: var(--fontCon);
 		}
 
-		& .submit {
+		& .submit-form {
 			font-size: 100%;
 			font-family: inherit;
 			background: white;
@@ -120,6 +120,7 @@ const ContactForm = (props) => {
 			font-weight: bold;
 			font-size: 20px;
 			text-align: center;
+			font-family: var(--fontCon);
 		}
 
 		@media (min-width: 768px) {
@@ -165,7 +166,7 @@ const ContactForm = (props) => {
 					<label>Meddelande</label>
 					<textarea type="text" name="text" />
 
-					<div className="submit">
+					<div className="submit-form">
 						<input type="submit" value="SKICKA FÖRFRÅGAN"></input>
 					</div>
 

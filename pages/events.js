@@ -99,6 +99,7 @@ function Events(props) {
 			font-size: 20px;
 			font-weight: bold;
 			margin-top: 10px;
+			font-family: var(--fontCon);
 		}
 	`;
 
