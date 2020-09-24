@@ -6,7 +6,6 @@ const ContactInfo = (props) => {
 		padding: 20px;
 		border: 2px solid var(--lightOrange);
 		border-radius: 2px;
-		letter-spacing: 0.08em;
 
 		& .info-text {
 			padding: 20px 0 0 0;
@@ -17,6 +16,7 @@ const ContactInfo = (props) => {
 			border-bottom: 2px solid var(--lightOrange);
 			font-size: 28px;
 			font-family: var(--fontCon);
+			letter-spacing: 0.08em;
 		}
 
 		& p {
@@ -28,6 +28,7 @@ const ContactInfo = (props) => {
 			padding: 20px 0 0 0;
 			font-size: 18px;
 			font-family: var(--fontCon);
+			letter-spacing: 0.08em;
 		}
 
 		@media (min-width: 768px) {

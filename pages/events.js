@@ -58,6 +58,7 @@ function Events(props) {
 			color: #dd932d;
 			padding: 10px 0 0 0;
 			letter-spacing: 0.08em;
+			font-family: var(--fontCon);
 		}
 
 		& img {

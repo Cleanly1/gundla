@@ -48,12 +48,12 @@ const ContactForm = (props) => {
 		margin: 0 20px 40px 20px;
 		padding: 20px;
 		border-radius: 2px;
-		letter-spacing: 0.08em;
 
 		& .bold-form {
 			font-weight: bold;
 			padding: 40px 0 20px 0;
 			font-family: var(--fontCon);
+			letter-spacing: 0.08em;
 		}
 
 		& h2 {
@@ -61,6 +61,7 @@ const ContactForm = (props) => {
 			border-bottom: 2px solid var(--nearBlack);
 			font-family: var(--fontCon);
 			font-size: 28px;
+			letter-spacing: 0.08em;
 		}
 
 		& .contact-text p {
