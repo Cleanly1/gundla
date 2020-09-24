@@ -9,7 +9,7 @@ const StyledSection = styled.section`
 	width: calc(100vw - 144px);
 	padding: 48px 72px;
 	overflow: hidden;
-	background-image: url("/images/ground.jpg");
+	background-image: url("/ground.jpg");
 	background-size: contain;
 	background-color: rgba(255, 255, 255, 0.95);
 	background-blend-mode: lighten;
@@ -52,10 +52,6 @@ const StyledSection = styled.section`
 		width: calc(100vw - 144px);
 		padding: 48px 72px;
 		overflow: hidden;
-		background-image: url("/images/ground.jpg");
-		background-size: contain;
-		background-color: rgba(255, 255, 255, 0.95);
-		background-blend-mode: lighten;
 
 		.background {
 			align-self: center;
@@ -103,8 +99,8 @@ function DisplayImages(props) {
 					images.map((image, i) => {
 						image = image.fields;
 						return (
-							<div>
-								<picture key={i}>
+							<div key={i}>
+								<picture>
 									<source
 										media="(min-width: 1000px)"
 										srcSet={

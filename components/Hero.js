@@ -16,6 +16,7 @@ const HeroContainer = styled.div`
 		padding: 32px 50px;
 		padding-bottom: 30vh;
 		background: ${(props) => props.bgColor || "#faf5ef"};
+		border: ${(props) => props.border || "none"};
 		border-radius: 2px;
 		color: var(--nearBlack);
 
@@ -103,6 +104,10 @@ const HeroContainer = styled.div`
 
 	& .showOnDesktop {
 		display: none;
+		font-family: var(--fontCon);
+		font-size: 24px;
+		line-height: 28px;
+		color: var(--nearBlack);
 	}
 
 	@media (min-width: 1025px) {
@@ -211,9 +216,10 @@ const HeroContainer = styled.div`
 function Hero(props) {
 	const imageOne = props.images.heroImageOne.fields;
 	const imageTwo = props.images.heroImageTwo.fields;
+	console.log(props);
 
 	return (
-		<HeroContainer bgColor={props.bgColor}>
+		<HeroContainer bgColor={props.bgColor} border={props.border}>
 			<div className="text">
 				<h1>{props.title}</h1>
 
