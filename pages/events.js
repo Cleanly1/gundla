@@ -1,4 +1,5 @@
 import Layout from "../components/layout";
+import DisplayImages from "../components/DisplayImages";
 import {
 	fetchEntriesByID,
 	fetchEntry,
@@ -12,9 +13,10 @@ function Events(props) {
 	});
 
 	const StyledBanner = styled.div`
-		background: #dd932d;
+		background: var(--orange);
 		padding: 10px;
 		text-align: center;
+		letter-spacing: 0.08em;
 
 		@media (min-width: 768px) {
 			margin: 10px 0 0 0;
@@ -23,9 +25,10 @@ function Events(props) {
 
 	const StyledEvents = styled.div`
 		margin: 20px 10px 10px 10px;
-		background: #f9f4ed;
+		background: var(--lightBeige);
 		padding: 10px;
 		text-align: center;
+		letter-spacing: 0.08em;
 
 		& h1 {
 			padding: 10px;
@@ -37,7 +40,8 @@ function Events(props) {
 	`;
 
 	const StyledEvent = styled.div`
-		padding: 20px;
+		padding: 20px 20px 0 20px;
+		letter-spacing: 0.08em;
 
 		& h2 {
 			color: #dd932d;
@@ -46,18 +50,45 @@ function Events(props) {
 
 		& img {
 			width: 100%;
-			border-top: 2px solid #f9f4ed;
+			border-top: 2px solid var(--lightBeige);
+
 			padding: 20px 0 0 0;
 		}
 
 		& .bold {
-			padding: 10px 0;
+			padding: 20px 0;
 			font-weight: bold;
 		}
 
 		@media (min-width: 768px) {
 			max-width: 1000px;
 			margin: auto;
+		}
+	`;
+
+	const StyledButton = styled.div`
+		width: 100%;
+		margin: 20px auto 0 auto;
+		letter-spacing: 0.08em;
+
+		& .more-events {
+			font-size: 100%;
+			font-family: inherit;
+			background: var(--lightBeige);
+			border: 2px solid var(--nearBlack);
+			border-radius: 2px;
+			padding: 5px 0 0 0;
+			height: 40px;
+			width: 300px;
+			margin: auto;
+			cursor: pointer;
+		}
+
+		& .more-events p {
+			text-align: center;
+			font-size: 20px;
+			font-weight: bold;
+			margin-top: 5px;
 		}
 	`;
 
@@ -82,6 +113,12 @@ function Events(props) {
 					<p className="bold">{event.fields.ticket}</p>
 				</StyledEvent>
 			))}
+			<StyledButton>
+				<div className="more-events">
+					<p>SE FLER EVENEMANG</p>
+				</div>
+			</StyledButton>
+			<DisplayImages images={props.displayImages} />
 		</Layout>
 	);
 }
@@ -92,6 +129,7 @@ export async function getStaticProps() {
 	const event = await fetchEntriesByID("6sO9wSIadxSWFhbL9tXjlp");
 	const events = await fetchEntry("events");
 	const hours = await fetchEntriesByID("Mj8bQjVAwHv8m3rWjPGrC");
+	const displayImages = await fetchEntriesByID("2QLm8CE0m0k2N2w8rAjJ0n");
 
 	event.text = richTextToHtml(event.text);
 	hours.openHours = richTextToHtml(hours.openHours);
@@ -101,6 +139,7 @@ export async function getStaticProps() {
 			event,
 			events,
 			hours,
+			displayImages,
 		},
 	};
 }

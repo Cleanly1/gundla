@@ -45,17 +45,24 @@ const ContactForm = (props) => {
 
 	const StyledForm = styled.div`
 		background: ${props.bgColor || "#BBCEB6"};
-		margin: 0 20px 0 20px;
-		padding: 10px;
+		margin: 0 20px 40px 20px;
+		padding: 20px;
 		border-radius: 2px;
+		letter-spacing: 0.08em;
 
-		& h2 {
-			padding: 0 0 10px 0;
-			border-bottom: 2px solid #4d4d4d;
+		& .bold-form {
+			font-weight: bold;
+			padding: 40px 0 20px 0;
 		}
 
-		& .text p {
+		& h2 {
 			padding: 10px 0 10px 0;
+			border-bottom: 2px solid var(--nearBlack);
+		}
+
+		& .contact-text p {
+			padding: 10px 0 10px 0;
+			line-height: 24px;
 		}
 
 		& input {
@@ -69,7 +76,7 @@ const ContactForm = (props) => {
 			width: calc(100% - 10px);
 			margin: 0 0 10px 0;
 			padding: 5px;
-			color: #4d4d4d;
+			color: var(--nearBlack);
 		}
 
 		& textarea {
@@ -83,25 +90,31 @@ const ContactForm = (props) => {
 			width: calc(100% - 10px);
 			margin: 0 0 10px 0;
 			padding: 5px;
-			color: #4d4d4d;
+			color: var(--nearBlack);
 			resize: none;
 		}
 
 		& label {
 			display: block;
+			padding: 0 0 2px 0;
 		}
 
 		& .submit {
 			font-size: 100%;
 			font-family: inherit;
 			background: white;
-			border: 2px solid #4d4d4d;
-			border-radius: 0px;
+			border: 2px solid var(--nearBlack);
+			border-radius: 2px;
 			padding: 5px 0 0 0;
 			height: 40px;
 			width: 300px;
 			margin: auto;
+
 			cursor: pointer;
+		}
+
+		& input[type="submit"] {
+			font-weight: bold;
 		}
 
 		@media (min-width: 768px) {
@@ -114,7 +127,7 @@ const ContactForm = (props) => {
 	`;
 
 	React.useEffect(() => {
-		document.querySelector(".text").innerHTML = props.text;
+		document.querySelector(".contact-text").innerHTML = props.text;
 	});
 
 	return (
@@ -124,12 +137,14 @@ const ContactForm = (props) => {
 			</StyledImg>
 			<StyledForm>
 				<h2>{props.title}</h2>
-				<div className="text"></div>
+				<div className="contact-text"></div>
 				<form
 					onSubmit={submitForm}
 					action="https://formspree.io/xeqpjklr"
 					method="POST"
 				>
+					<p className="bold-form">FÖRFRÅGAN</p>
+
 					<label>Namn</label>
 					<input type="name" name="name" />
 
