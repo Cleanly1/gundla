@@ -41,6 +41,7 @@ function Contact(props) {
 				</StyledImg>
 				<ContactForm
 					bgColor="#BBCEB6"
+					lineColor="#4D4D4D"
 					text={props.form.text}
 					title={props.form.title}
 					image={props.form.image.fields.file.url}

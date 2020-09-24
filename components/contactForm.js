@@ -58,7 +58,7 @@ const ContactForm = (props) => {
 
 		& h2 {
 			padding: 10px 0 10px 0;
-			border-bottom: 2px solid var(--nearBlack);
+			border-bottom: 2px solid ${props.lineColor || "#BBCEB6"};
 			font-family: var(--fontCon);
 			font-size: 28px;
 			letter-spacing: 0.08em;
