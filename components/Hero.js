@@ -241,6 +241,7 @@ const HeroContainer = styled.div`
 				width: 46vw;
 				& img {
 					position: relative;
+					width: 100%;
 					top: 50px;
 				}
 			}
