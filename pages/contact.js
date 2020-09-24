@@ -1,23 +1,61 @@
 import Layout from "../components/layout";
 import ContactForm from "../components/contactForm";
 import ContactInfo from "../components/contactInfo";
+import styled from "styled-components";
 
 import { fetchEntriesByID, richTextToHtml } from "../utils/contentfulPosts";
 
+const StyledBackground = styled.div`
+	overflow: hidden;
+	background-image: url("/ground.jpg");
+	background-size: contain;
+	background-color: rgba(255, 255, 255, 0.95);
+	background-blend-mode: lighten;
+	margin: 0 0 -10px 0;
+`;
+
+const StyledImg = styled.div`
+	padding: 0 20px 30px 20px;
+	margin: 0 0 20px 20px;
+
+	& img {
+		width: 100%;
+	}
+
+	@media (min-width: 768px) {
+		max-width: 1000px;
+		margin: auto;
+	}
+`;
+
 function Contact(props) {
+	React.useEffect(() => {
+		document.querySelector(".contact-text").innerHTML = props.form.text;
+		document.querySelector(".info-text").innerHTML = props.info.text;
+	});
+
 	return (
 		<Layout title="Kontakt" openHours={props.hours.openHours}>
-			<ContactInfo
-				title={props.info.title}
-				text={props.info.text}
-				image={props.info.heroImage.fields.file.url}
-			/>
-			<ContactForm
-				bgColor="#BBCEB6"
-				text={props.form.text}
-				title={props.form.title}
-				image={props.form.image.fields.file.url}
-			/>
+			<ContactInfo title={props.info.title}>
+				<div className="info-text"></div>
+			</ContactInfo>
+			<StyledBackground>
+				<StyledImg>
+					<img
+						src={`https:${props.info.heroImage.fields.file.url}`}
+						alt="Contact Image"
+					/>
+				</StyledImg>
+				<ContactForm
+					bgColor="#BBCEB6"
+					lineColor="#4D4D4D"
+					formTitle="FÖRFRÅGAN"
+					title={props.form.title}
+					image={props.form.image.fields.file.url}
+				>
+					<div className="contact-text"></div>
+				</ContactForm>
+			</StyledBackground>
 		</Layout>
 	);
 }
