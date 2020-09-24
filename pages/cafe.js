@@ -84,6 +84,8 @@ const RestyledHero = styled(Hero)`
 function Cafe(props) {
 	React.useEffect(() => {
 		document.querySelector(".richText").innerHTML = props.posts.heroText;
+		document.querySelector(".contact-text").innerHTML =
+			props.posts.cateringText;
 		document.querySelector(".openHours").innerHTML =
 			"<h4>Öppettider</h4>" + props.hours.openHours;
 	});
@@ -101,12 +103,15 @@ function Cafe(props) {
 				<h4 className="hideOnDesktop">Hjärtligt Välkomna!</h4>
 				<div className="openHours"></div>
 			</RestyledHero>
-			{/* <ContactForm
-				bgColor="#BBCEB6"
-				text={"hello"}
-				title="Catering"
+			<ContactForm
+				bgColor="#EEC996"
+				lineColor="#4D4D4D"
+				formTitle="CATERINGFÖRFRÅGAN"
+				title="CATERING"
 				image={props.posts.cateringImage.fields.file.url}
-			></ContactForm> */}
+			>
+				<div className="contact-text"></div>
+			</ContactForm>
 		</Layout>
 	);
 }
