@@ -45,9 +45,10 @@ const StyledSection = styled.section`
 		align-items: center;
 		padding-top: 96px;
 		width: calc(100vw - 144px);
-		padding: 48px 72px;
+		padding: 34px 72px;
 		position: relative;
 		& a {
+			position: relative;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -59,16 +60,49 @@ const StyledSection = styled.section`
 			& img {
 				width: 100%;
 			}
+
+			& .textOverlay {
+				position: absolute;
+				display: flex;
+				flex-flow: column nowrap;
+				justify-content: center;
+				align-items: center;
+				z-index: 3;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(
+						0deg,
+						rgba(77, 77, 77, 0.7),
+						rgba(77, 77, 77, 0.7)
+					),
+					url(20_08_30_GundlaGardscafe-6.jpg);
+				border-radius: 2px;
+
+				& img {
+					width: 100px;
+				}
+
+				& h1 {
+					font-family: var(--fontCon);
+					font-weight: bold;
+					font-size: 24px;
+					line-height: 28px;
+					letter-spacing: 0.08em;
+					text-decoration-line: underline;
+					text-transform: uppercase;
+					color: var(--nearWhite);
+				}
+			}
 		}
 
 		.background {
 			align-self: center;
 			position: absolute;
-			background-color: var(--lightGreen);
-			background-clip: content-box;
-			top: 0px;
+			background-color: var(--beige);
+			background-clip: padding-box;
+			top: 34px;
 			width: calc(100vw - 144px);
-			height: 95%;
+			height: 92%;
 			z-index: 1;
 		}
 	}
@@ -82,6 +116,30 @@ const StyledSection = styled.section`
 		width: calc(100vw - 144px);
 		padding: 48px 72px;
 		overflow: hidden;
+
+		& .socialText {
+			display: flex;
+			flex-flow: column nowrap;
+			align-items: center;
+			padding: 48px 16px 24px 16px;
+			& h1 {
+				font-family: var(--fontCon);
+				font-weight: 700;
+				font-size: 28px;
+				line-height: 33px;
+				text-align: center;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+				margin-bottom: 32px;
+			}
+
+			& p {
+				width: 60%;
+				font-size: 16px;
+				line-height: 24px;
+				text-align: center;
+			}
+		}
 
 		.images {
 			z-index: 2;
@@ -105,9 +163,9 @@ const StyledSection = styled.section`
 			.background {
 				align-self: center;
 				position: absolute;
-				left: -72px;
-				background-color: var(--lightGreen);
-				background-clip: content-box;
+				background-color: var(--beige);
+				background-clip: padding-box;
+				top: 25%;
 				width: 100vw;
 				height: 50%;
 				z-index: 1;
@@ -126,7 +184,8 @@ function SocialSection(props) {
 				{props.images &&
 					images.map((image, i) => {
 						image = image.fields;
-						const href = i == 1 ? "facebook.com" : "instagram.com";
+						const href =
+							i == 1 ? "www.facebook.com" : "www.instagram.com";
 						return (
 							<Link key={i} href={href}>
 								<a>
@@ -156,6 +215,20 @@ function SocialSection(props) {
 											alt={image.description}
 										/>
 									</picture>
+									<div className="textOverlay">
+										<img
+											src={
+												i == 1
+													? "/icons/facebook.svg"
+													: "/icons/instagram.svg"
+											}
+											alt={image.description}
+										/>
+										<h1>
+											Gå till{" "}
+											{i == 1 ? "Facebook" : "Instagram"}
+										</h1>
+									</div>
 								</a>
 							</Link>
 						);

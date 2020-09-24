@@ -137,7 +137,7 @@ const StyledSection = styled.section`
 			width: 0vw;
 			& .imagecontainer {
 				position: relative;
-				top: 12px;
+				top: -10px;
 				left: 12px;
 				width: 35vw;
 				height: 35vw;
@@ -166,6 +166,7 @@ const StyledSection = styled.section`
 			flex-flow: column nowrap;
 			width: 50vw;
 			padding-top: 0;
+			top: 0;
 			margin-left: 30vw;
 			padding: 24px 24px 24px 15vw;
 			& .textContent {

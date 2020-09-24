@@ -115,14 +115,10 @@ const StyledSection = styled.section`
 			position: relative;
 			width: 60vw;
 			height: 60vw;
-			margin-bottom: 24px;
-			margin: 24px 24px 0 24px;
 			z-index: 5;
 
 			& .image {
 				position: relative;
-				top: 24px;
-				left: 9%;
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -139,39 +135,32 @@ const StyledSection = styled.section`
 		}
 		& .textWrapper {
 			padding-top: 75px;
-			& .textContent {
+			& .findUsText {
 				& p {
 					width: 80%;
 				}
-			}
-			& button {
-				width: 50%;
-				align-self: flex-start;
-				margin: 0 0 64px 26px;
 			}
 		}
 	}
 
 	@media (min-width: 1025px) {
 		flex-flow: row nowrap;
-		padding: 0 48px;
+		padding: 72px 48px;
 		width: calc(100vw - 96px);
-		background: none;
+
 		& .wrapper {
-			width: 0vw;
+			width: 40vw;
 			& .imagecontainer {
 				position: relative;
-				width: 35vw;
-				height: 35vw;
-				margin-bottom: 24px;
+				width: 43vw;
+				height: 95%;
 
 				& .image {
-					position: relative;
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					width: 38vw;
-					height: 38vw;
+					width: 40vw;
+					height: 100%;
 					overflow: hidden;
 
 					& img {
@@ -183,13 +172,11 @@ const StyledSection = styled.section`
 		& .textWrapper {
 			display: flex;
 			flex-flow: column nowrap;
-			width: 50vw;
+			width: calc(50vw - 168px);
 			padding-top: 0;
-			margin-left: 30vw;
-			padding: 24px 24px 24px 15vw;
-			& .textContent {
-				padding: 72px 24px 24px 24px;
-
+			margin-left: 0;
+			padding: 72px 72px 72px 96px;
+			& .findUsText {
 				& h1 {
 					width: 100%;
 					padding-bottom: 16px;
@@ -203,16 +190,16 @@ const StyledSection = styled.section`
 					width: 100%;
 					line-height: 28px;
 					margin-bottom: 24px;
+					:last-child {
+						margin-bottom: 0;
+					}
 					:nth-last-child(2) {
 						margin-bottom: 0;
 					}
+					:nth-last-child(3) {
+						margin-bottom: 0;
+					}
 				}
-			}
-
-			& button {
-				width: 50%;
-				align-self: flex-start;
-				margin: 0 0 32px 26px;
 			}
 		}
 	}

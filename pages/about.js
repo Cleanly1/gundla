@@ -19,13 +19,14 @@ function About(props) {
 		<Layout title={title} openHours={props.hours.openHours}>
 			<Hero
 				title={title}
-				bgColor="none"
+				bgColor="white"
 				border="4px solid #BBCEB6"
 				images={props.posts}
 			>
 				<h3>Caféet i stan men mitt i naturen!</h3>
 				<div className="richText"></div>
-				<h3 className="showOnDesktop">Välkomna till oss!</h3>
+				<h4 className="showOnDesktop">Välkomna till oss!</h4>
+				<h4 className="hideOnDesktop">Hjärtligt Välkomna!</h4>
 			</Hero>
 
 			<SocialSection images={props.displayImages}>
