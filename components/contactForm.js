@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Cta from "../components/CTAbutton";
 
 const ContactForm = (props) => {
 	const [status, setStatus] = useState(null);
@@ -136,6 +137,40 @@ const ContactForm = (props) => {
 		}
 	`;
 
+	const Button = styled.button`
+		background: #f9f4ed;
+		border: 2px solid #4d4d4d;
+		min-height: 5vh;
+		min-width: 232px;
+		padding: 16px;
+		box-sizing: border-box;
+		text-transform: uppercase;
+		color: var(--nearBlack);
+		font-family: var(--fontCon);
+		font-weight: 700;
+		font-size: 16px;
+		border-radius: 2px;
+		box-shadow: 2px 2px 4px rgba(77, 77, 77, 0.25);
+
+		:hover {
+			background-color: var(--orange);
+			box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.25),
+				2px 2px 4px rgba(57, 57, 57, 0.2);
+		}
+
+		@media (min-width: 768px) {
+			min-width: 20vw;
+		}
+	`;
+
+	const StyledButton = styled.div`
+		width: 100%;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	`;
+
 	return (
 		<div>
 			<StyledImg>
@@ -166,9 +201,11 @@ const ContactForm = (props) => {
 					<label>Meddelande</label>
 					<textarea type="text" name="text" />
 
-					<div className="submit-form">
-						<input type="submit" value="SKICKA FÖRFRÅGAN"></input>
-					</div>
+					<StyledButton>
+						<div>
+							<Button type="submit">SKICKA FÖRFRÅGAN</Button>
+						</div>
+					</StyledButton>
 
 					{status && <p className="status">{status}</p>}
 				</form>

@@ -6,6 +6,7 @@ import {
 	richTextToHtml,
 } from "../utils/contentfulPosts";
 import styled from "styled-components";
+import Cta from "../components/CTAbutton";
 
 function Events(props) {
 	React.useEffect(() => {
@@ -70,6 +71,10 @@ function Events(props) {
 			font-family: var(--fontCon);
 		}
 
+		& .bold.first {
+			padding: 7px 0;
+		}
+
 		@media (min-width: 768px) {
 			max-width: 1000px;
 			margin: auto;
@@ -78,27 +83,10 @@ function Events(props) {
 
 	const StyledButton = styled.div`
 		width: 100%;
-		margin: 20px auto 0 auto;
-		letter-spacing: 0.08em;
-
-		& .more-events {
-			background: var(--lightBeige);
-			border: 2px solid var(--nearBlack);
-			border-radius: 2px;
-			padding: 5px 0 0 0;
-			height: 45px;
-			width: 250px;
-			margin: auto;
-			cursor: pointer;
-		}
-
-		& .more-events p {
-			text-align: center;
-			font-size: 16px;
-			font-weight: bold;
-			margin-top: 10px;
-			font-family: var(--fontCon);
-		}
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	`;
 
 	return (
@@ -117,14 +105,18 @@ function Events(props) {
 						alt={event.fields.image.fields.title}
 					/>
 					<h2>{event.fields.title}</h2>
-					<p className="bold">{event.fields.date}</p>
+					<p className="bold first">{event.fields.date}</p>
 					<p>{event.fields.description}</p>
 					<p className="bold">{event.fields.ticket}</p>
 				</StyledEvent>
 			))}
 			<StyledButton>
-				<div className="more-events">
-					<p>SE FLER EVENEMANG</p>
+				<div>
+					<Cta
+						text="SE FLER EVENEMANG"
+						link="/events"
+						borderColor="#769D6C"
+					/>
 				</div>
 			</StyledButton>
 			<DisplayImages images={props.displayImages} />
