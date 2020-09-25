@@ -17,6 +17,9 @@ const StyledSection = styled.section`
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		color: var(--nearBlack);
+		padding-bottom: 16px;
+		margin-bottom: 8px;
+		border-bottom: 2px solid var(--lightBrown);
 	}
 
 	& div {
@@ -90,13 +93,19 @@ const StyledSection = styled.section`
 		align-items: center;
 		padding: 72px 51px 60px 51px;
 
+		& h1 {
+			margin-bottom: 16px;
+			padding: none;
+			border-bottom: none;
+		}
+
 		& div {
 			& p {
 				text-align: center;
 				font-family: var(--fontCon);
 				font-weight: 400;
-				font-size: 16px;
-				line-height: 24px;
+				font-size: 24px;
+				line-height: 36px;
 				color: var(--nearBlack);
 			}
 		}
