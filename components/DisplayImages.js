@@ -36,9 +36,9 @@ const StyledSection = styled.section`
 			height: 80vw;
 			width: 80vw;
 			overflow: hidden;
-			margin: 20px;
+			margin: 20px 40px;
 			& img {
-				width: 100%;
+				height: 100%;
 			}
 		}
 	}
@@ -85,14 +85,13 @@ const StyledSection = styled.section`
 `;
 
 function DisplayImages(props) {
-	console.log(props.images);
 	const images = [
 		props.images.firstImage,
 		props.images.secondImage,
 		props.images.thirdImage,
 	];
 	return (
-		<StyledSection>
+		<StyledSection className={props.className}>
 			<div className="background"></div>
 			<div className="images">
 				{props.images &&
@@ -104,7 +103,9 @@ function DisplayImages(props) {
 									<source
 										media="(min-width: 1000px)"
 										srcSet={
-											"https:" + image.file.url + "?w=800"
+											"https:" +
+											image.file.url +
+											"?w=1000"
 										}
 									/>
 									<source

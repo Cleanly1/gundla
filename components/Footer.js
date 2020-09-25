@@ -111,6 +111,7 @@ const InfoDiv = styled.div`
 	justify-content: center;
 	align-items: flex-start;
 	margin-top: 40px;
+	padding: 0 32px;
 	width: calc(100vw - 32px);
 	z-index: 5;
 

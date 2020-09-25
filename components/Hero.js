@@ -7,6 +7,7 @@ const HeroContainer = styled.div`
 	width: calc(100vw - 32px);
 	max-height: 142vh;
 	padding: 0 16px;
+	padding-top: 24px;
 	margin-bottom: 42px;
 
 	& .background {
@@ -27,7 +28,7 @@ const HeroContainer = styled.div`
 		flex-flow: column nowrap;
 		justify-content: center;
 		align-items: flex-start;
-		padding: 32px 50px;
+		padding: 32px 24px;
 		padding-bottom: 10vh;
 		margin-bottom: 20vh;
 		background: ${(props) => props.bgColor || "#faf5ef"};
@@ -35,6 +36,10 @@ const HeroContainer = styled.div`
 		border-radius: 2px;
 		color: var(--nearBlack);
 		z-index: 4;
+
+		& .richText {
+			width: 100%;
+		}
 
 		& h1 {
 			font-family: var(--fontCon);
@@ -258,10 +263,13 @@ const HeroContainer = styled.div`
 function Hero(props) {
 	const imageOne = props.images.heroImageOne.fields;
 	const imageTwo = props.images.heroImageTwo.fields;
-	console.log(props);
 
 	return (
-		<HeroContainer bgColor={props.bgColor} border={props.border}>
+		<HeroContainer
+			bgColor={props.bgColor}
+			border={props.border}
+			className={props.className}
+		>
 			<div className="text">
 				<h1>{props.title}</h1>
 

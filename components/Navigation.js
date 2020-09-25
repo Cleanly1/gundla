@@ -10,28 +10,32 @@ const Nav = styled.nav`
 	height: 200px;
 
 	& .header {
+		position: relative;
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: center;
 		align-items: center;
 		margin: 26px 0 20px 0;
+		padding: 24px 0;
 
 		& h1 {
 			font-family: var(--topFont);
 			font-size: 32px;
 			font-weight: 500;
-			margin: 0 24px;
+			margin: 0 12px;
 		}
 
 		& img {
+			position: absolute;
 			height: 96px;
+			opacity: 0.25;
 		}
 	}
 
 	& .navbar {
 		display: flex;
 		position: sticky;
-		justify-content: space-around;
+		justify-content: space-evenly;
 		width: 100%;
 		background: white;
 		padding: 15px 0 13px 0;
@@ -40,8 +44,10 @@ const Nav = styled.nav`
 			font-weight: bold;
 			font-size: 20px;
 			line-height: 23px;
+			width: auto;
 			letter-spacing: 0.1em;
 			text-decoration: none;
+			text-align: center;
 			color: var(--brown);
 			padding: 5px;
 			margin: 0 10px;
@@ -98,11 +104,12 @@ function Navigation() {
 	});
 	return (
 		<Nav>
-			<div className="header">
-				<h1>Gundla</h1>
-				<img src="/Logo.svg" alt="Gundla Gårdscafé logga" />
-				<h1>Gårdscafé</h1>
-			</div>
+			<Link href="/">
+				<div className="header">
+					<h1>Gundla Gårdscafé</h1>
+					<img src="/Logo.svg" alt="Gundla Gårdscafé logga" />
+				</div>
+			</Link>
 			<div className="navbar">
 				<Link href="/">
 					<a>Startsida</a>

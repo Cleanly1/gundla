@@ -20,14 +20,14 @@ function Index(props) {
 	return (
 		<Layout title="Gundla" openHours={props.hours.openHours}>
 			<Hero
-				title="GUNDLA GÅRDSCAFÈ"
+				title="GUNDLA GÅRDSCAFÉ"
 				bgColor="#faf5ef"
 				images={props.posts}
 			>
 				<h3>Caféet i stan men mitt i naturen!</h3>
 				<div className="richText"></div>
 				<h3 className="showOnDesktop">Välkomna till oss</h3>
-				<Cta text="Läs mer" borderColor="#014335" />
+				<Cta text="Till Caféet" borderColor="#014335" link="/cafe" />
 			</Hero>
 
 			<Info />

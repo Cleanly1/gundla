@@ -94,9 +94,10 @@ function Info() {
 				</div>
 				<h1>LÄMNA BILEN HEMMA</h1>
 				<p>
-					Då det är viktigt med natur och sånt så får du gärna cykla
-					till oss. det finns heller ingen parkering så lycka till om
-					du kör bil.
+					Vi värnar om naturen, djuren och allt i vår närhet. Därför
+					ser vi helst att ni som har möjlighet tar cykel eller går
+					till oss. Vid rörelsehinder går det bra att kontakta oss
+					innan.
 				</p>
 			</div>
 			<div>
@@ -108,9 +109,9 @@ function Info() {
 				</div>
 				<h1>ALLA ÄR VÄLKOMNA</h1>
 				<p>
-					Då det är viktigt med natur och sånt så får du gärna cykla
-					till oss. det finns heller ingen parkering så lycka till om
-					du kör bil.
+					Hunden är ju människans bästa vän och vi är alla vänner. Vi
+					ser därför till att även din hund får en bra upplevelse och
+					är självklart också välkommen till oss.
 				</p>
 			</div>
 			<div>
@@ -122,9 +123,8 @@ function Info() {
 				</div>
 				<h1>NJUT AV NATUREN</h1>
 				<p>
-					Då det är viktigt med natur och sånt så får du gärna cykla
-					till oss. det finns heller ingen parkering så lycka till om
-					du kör bil.
+					Vi försöker skapa en så naturlig miljö som möjligt med
+					återvunna och organiska material. Vi hoppas att det känns.
 				</p>
 			</div>
 		</InfoSection>
