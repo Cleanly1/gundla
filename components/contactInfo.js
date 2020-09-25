@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const ContactInfo = (props) => {
 	const StyledDiv = styled.div`
-		margin: 20px 20px 0 20px;
+		margin: 30px 20px 0 20px;
 		padding: 20px;
 		border: 2px solid var(--lightOrange);
 		border-radius: 2px;

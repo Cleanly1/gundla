@@ -153,7 +153,7 @@ const ContactForm = (props) => {
 		box-shadow: 2px 2px 4px rgba(77, 77, 77, 0.25);
 
 		:hover {
-			background-color: var(--orange);
+			background-color: var(--lightGreen);
 			box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.25),
 				2px 2px 4px rgba(57, 57, 57, 0.2);
 		}
