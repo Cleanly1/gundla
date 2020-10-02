@@ -3,12 +3,13 @@ name: Prettier check
 on: [push, pull_request]
 
 jobs:
-  name: "Prettier checkup"
+  test:
+    name: "Prettier checkup"
 
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-  steps:
-	- name: "checkout code"
-	  uses: actions/checkout@v2
-	- run: "npm install"
-	- run: "npm test"
+    steps:
+	  - name: "checkout code"
+	    uses: actions/checkout@v2
+	  - run: "npm install"
+	  - run: "npm test"
