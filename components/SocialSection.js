@@ -184,7 +184,9 @@ function SocialSection(props) {
 					images.map((image, i) => {
 						image = image.fields;
 						const href =
-							i == 1 ? "www.facebook.com" : "www.instagram.com";
+							i == 1
+								? "https://www.facebook.com"
+								: "https://www.instagram.com";
 						return (
 							<Link key={i} href={href}>
 								<a>
